@@ -121,7 +121,7 @@
 
 <ul>
     <li>
-        <div class="all active" data-rel="All">All
+        <div class="all active" data-rel="全部文章">全部文章
             
                 <small>(3)</small>
             
@@ -145,7 +145,7 @@
         
             <a class="about  site_url"
                
-               href="/about">About</a>
+               href="/about">关于</a>
         
         
     </div>
@@ -161,7 +161,7 @@
     <div class="nav-right">
         <div class="friends-area">
     <div class="friends-title">
-        Links
+        友情链接
         <i class="iconfont icon-left"></i>
     </div>
     <div class="friends-content">
@@ -175,20 +175,20 @@
         <div class="title-list">
     <div class="right-top">
         <div id="default-panel">
-            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
-            <div class="right-title">All</div>
-            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
         </div>
         <div id="search-panel">
-            <i class="iconfont icon-left" data-title="return"></i>
+            <i class="iconfont icon-left" data-title="返回"></i>
             <input id="local-search-input" autocomplete="off"/>
             <label class="border-line" for="input"></label>
-            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
-            <i class="iconfont icon-tag" data-title="label"></i>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
         </div>
         <div id="outline-panel" style="display: none">
-            <div class="right-title">outline</div>
-            <i class="iconfont icon-list" data-title="switch to article list"></i>
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
         </div>
     </div>
 
@@ -204,7 +204,7 @@
     <nav id="title-list-nav">
         
         
-        <a  class="All "
+        <a  class="全部文章 "
            href="/2024/12/29/%E8%99%B9%E5%BD%B1Blog/"
            data-tag=""
            data-author="" >
@@ -213,7 +213,7 @@
         </a>
         
         
-        <a  class="All "
+        <a  class="全部文章 "
            href="/2024/12/29/test-my-site/"
            data-tag=""
            data-author="" >
@@ -222,7 +222,7 @@
         </a>
         
         
-        <a  class="All "
+        <a  class="全部文章 "
            href="/2024/12/29/hello-world/"
            data-tag=""
            data-author="" >
@@ -272,10 +272,6 @@
 
         </article>
         
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
         
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
@@ -308,28 +304,10 @@
     </div>
 </div>
 <div class="full-toc">
-    <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
 </div>
-
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>Help us with donation</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect,style="display: none;">
-        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
-    </div>
-</div>
-
 
 </body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
@@ -344,14 +322,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -370,11 +340,6 @@
     }
 
     /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
     
 
 </script>
