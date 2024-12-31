@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | Hexo">
+  <title>Apidoc-文档生成工具 | Hexo</title>
+  <meta name="keywords" content=" Apidoc ">
+  <meta name="description" content="Apidoc-文档生成工具 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -275,24 +275,39 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-Apidoc-文档生成工具" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">Apidoc-文档生成工具</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="工具">工具</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Apidoc</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-12-29 14:13:03'>2024-12-29 14:13</time>
+            发布时间 : <time class="date" title='最后更新: 2024-12-31 14:24:20'>2024-12-31 14:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:752</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -311,7 +326,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#apidoc-Apidoc-%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7"><span class="toc-text">[apidoc]Apidoc-文档生成工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-text">工具的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APIDOC%E7%9A%84%E7%94%9F%E6%88%90"><span class="toc-text">APIDOC的生成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#apidoc%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">apidoc的配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apidoc%E9%85%8D%E7%BD%AE%E5%B1%9E%E6%80%A7"><span class="toc-text">apidoc配置属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Apidoc%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90"><span class="toc-text">Apidoc文档生成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#idea%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84%E7%A4%BA%E4%BE%8B"><span class="toc-text">idea文档结构示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Api%E6%94%AF%E6%8C%81%E7%9A%84%E6%A0%87%E7%AD%BE"><span class="toc-text">Api支持的标签</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -327,7 +342,128 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="apidoc-Apidoc-文档生成工具"><a href="#apidoc-Apidoc-文档生成工具" class="headerlink" title="[apidoc]Apidoc-文档生成工具"></a>[apidoc]Apidoc-文档生成工具</h1><p>Apidoc是一个用于生成API文档的工具，支持多种编程语言，包括Java、JavaScript和PHP等。以下是Apidoc的安装、配置和使用方法。</p>
+<h2 id="工具的安装"><a href="#工具的安装" class="headerlink" title="工具的安装"></a>工具的安装</h2><p>Apidoc可以通过npm进行安装：</p>
+<pre><code class="bash">npm i apidoc [-g|-D]
+</code></pre>
+<ul>
+<li><code>-g</code> 全局安装</li>
+<li><code>-D</code> 局部安装（推荐，因为开发环境只需要apidoc包）</li>
+</ul>
+<p>对于VSCode编辑器的支持，可以在扩展中搜索并安装ApiDoc Snippets。</p>
+<h2 id="APIDOC的生成"><a href="#APIDOC的生成" class="headerlink" title="APIDOC的生成"></a>APIDOC的生成</h2><h3 id="apidoc的配置文件"><a href="#apidoc的配置文件" class="headerlink" title="apidoc的配置文件"></a>apidoc的配置文件</h3><p>Apidoc的配置有两种方式：</p>
+<ol>
+<li><strong>添加 <code>apidoc.json</code> 方式</strong></li>
+</ol>
+<pre><code class="json">&#123;
+  &quot;name&quot;: &quot;example&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;description&quot;: &quot;apiDoc basic example&quot;,
+  &quot;title&quot;: &quot;Custom apiDoc browser title&quot;,
+  &quot;url&quot; : &quot;https://api.github.com/v1&quot;
+&#125;
+</code></pre>
+<ol start="2">
+<li><strong>在 <code>package.json</code> 中添加配置方式</strong></li>
+</ol>
+<pre><code class="json">&#123;
+  &quot;name&quot;: &quot;example&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;description&quot;: &quot;apiDoc basic example&quot;,
+  &quot;apidoc&quot;: &#123;
+    &quot;title&quot;: &quot;Custom apiDoc browser title&quot;,
+    &quot;url&quot; : &quot;apiDoc base interface url&quot;
+  &#125;
+&#125;
+</code></pre>
+<h3 id="apidoc配置属性"><a href="#apidoc配置属性" class="headerlink" title="apidoc配置属性"></a>apidoc配置属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>项目名称，显示在生成的apidoc首页。</td>
+</tr>
+<tr>
+<td>version</td>
+<td>项目的版本号。</td>
+</tr>
+<tr>
+<td>description</td>
+<td>项目的描述信息。</td>
+</tr>
+<tr>
+<td>title</td>
+<td>配置生成html的title标签。</td>
+</tr>
+<tr>
+<td>url</td>
+<td>设置api接口的前缀，所有api接口路径前会自动添加该值。</td>
+</tr>
+<tr>
+<td>sampleUrl</td>
+<td>是否展示发送示例请求的pannel。</td>
+</tr>
+<tr>
+<td>header</td>
+<td>apidoc导航的顶部目录，可用于配置展示的md文件。</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>apidoc导航的底部目录，可用于配置展示的md文件。</td>
+</tr>
+</tbody></table>
+<h3 id="Apidoc文档生成"><a href="#Apidoc文档生成" class="headerlink" title="Apidoc文档生成"></a>Apidoc文档生成</h3><p>全局安装的apidoc，可以在项目的根目录下执行以下命令：</p>
+<h4 id="idea文档结构示例"><a href="#idea文档结构示例" class="headerlink" title="idea文档结构示例"></a>idea文档结构示例</h4><pre><code>MySpringBootProject/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/demo/
+│   │   │       └── controller/
+│   │   │           └── UserController.java
+│   │   ├── resources/
+│   │       └── application.properties
+├── pom.xml
+├── apidoc.json
+</code></pre>
+<pre><code class="bash">apidoc -i 编译文件夹 -o 输出文件夹
+示例：apidoc -i src/main/java/ -o apidoc/
+</code></pre>
+<ul>
+<li><code>编译文件夹</code>：需要输出接口文档的文件所在文件夹。</li>
+<li><code>输出文件夹</code>：生成接口文档的存储文件夹。</li>
+</ul>
+<h2 id="Api支持的标签"><a href="#Api支持的标签" class="headerlink" title="Api支持的标签"></a>Api支持的标签</h2><p>Apidoc支持的标签包括：</p>
+<ul>
+<li><code>@api &#123;method&#125; path title</code>：定义接口</li>
+<li><code>@apiVersion version</code>：设置接口文档的版本</li>
+<li><code>@apiGroup name</code>：接口分组</li>
+<li><code>@apiDefine</code>：定义结构块</li>
+<li><code>@apiUse</code>：使用定义的定义的<code>@apiDefine</code>结构</li>
+<li><code>@apiPermission name</code>：定义权限的名称</li>
+<li><code>@apiDescription text</code>：api的详细描述，text可以多行</li>
+<li><code>@apiName name</code>：用于导航的html属性值，主要是用作锚点</li>
+<li><code>@apiPrivate</code>：标记接口私有</li>
+<li><code>@apiDeprecated [text]</code>：标记api废弃</li>
+<li><code>@apiIgnore [hint]</code>：接口编译时忽略，apidoc中不显示该接口</li>
+<li><code>@apiSampleRequest</code>：单独设置指定接口的请求pannel的显示</li>
+<li><code>@apiQuery name</code>：定义查询参数</li>
+<li><code>@apiBody</code>：定义接口的请求体</li>
+<li><code>@apiExample</code>：api使用示例</li>
+<li><code>@apiParam</code>：用于定义传递给<code>@api</code>的参数</li>
+<li><code>@apiParamExample</code>：用于定义<code>@api</code>中多行格式，例如Json格式的参数</li>
+<li><code>@apiError</code>：用于定义错误码返回参数</li>
+<li><code>@apiErrorExample</code>：错误码返回参数多行格式，例如Json格式的参数</li>
+<li><code>@apiHeader</code>：传递给api header的参数描述</li>
+<li><code>@apiHeaderExample</code>：传递给api header的多行参数描述</li>
+<li><code>@apiSuccess</code>：定义成功返回参数</li>
+<li><code>@apiSuccessExample</code>：定义成功返回多行参数，例如Json格式的参数</li>
+</ul>
+<hr>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
