@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>about | Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="about | Hexo">
+  <title>[object Object] | Hexo</title>
+  <meta name="keywords" content=" mac , 端口转发 , socat ">
+  <meta name="description" content="[object Object] | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -371,24 +371,43 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-socat命令" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">about</h1>
+        <h1 class="article-title">[object Object]</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="liunx">liunx</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color4">mac</a>
+            
+            <a class="color5">端口转发</a>
+            
+            <a class="color1">socat</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-12-29 14:13:03'>2024-12-29 14:13</time>
+            发布时间 : <time class="date" title='最后更新: 2025-01-02 12:52:45'>2025-01-02 12:45</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:580</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -407,7 +426,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9C%A8Mac%E4%B8%8A%E4%BD%BF%E7%94%A8socat%E5%AE%9E%E7%8E%B0%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="toc-text">在Mac上使用socat实现端口转发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="toc-text">操作步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85socat"><span class="toc-text">安装socat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="toc-text">进行端口转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="toc-text">后台运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="toc-text">检查端口转发是否成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9C%E6%AD%A2%E8%BD%AC%E5%8F%91"><span class="toc-text">停止转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAshell%E8%84%9A%E6%9C%AC%E6%96%B9%E4%BE%BF%E4%BD%BF%E7%94%A8"><span class="toc-text">创建shell脚本方便使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E9%85%8D%E7%BD%AE"><span class="toc-text">数据库连接配置</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -423,7 +442,104 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="在Mac上使用socat实现端口转发"><a href="#在Mac上使用socat实现端口转发" class="headerlink" title="在Mac上使用socat实现端口转发"></a>在Mac上使用socat实现端口转发</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在Mac操作系统中，<code>socat</code>是一个功能强大的网络工具，它可以用来实现端口转发，类似于Windows中的<code>netsh</code>端口转发功能。本文将介绍如何在Mac上使用<code>socat</code>进行端口转发。</p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="安装socat"><a href="#安装socat" class="headerlink" title="安装socat"></a>安装socat</h3><p>首先，你需要安装<code>socat</code>。在Mac上，可以通过Homebrew来安装：</p>
+<pre><code class="bash">brew install socat
+</code></pre>
+<h3 id="进行端口转发"><a href="#进行端口转发" class="headerlink" title="进行端口转发"></a>进行端口转发</h3><p>使用<code>socat</code>进行端口转发的基本命令格式如下：</p>
+<pre><code class="bash">socat TCP-LISTEN:本地端口,reuseaddr,fork TCP:远程IP:远程端口
+</code></pre>
+<p>例如，如果你想要将本地的1521端口转发到远程IP <code>1.119.199.37</code> 的9521端口，你可以执行：</p>
+<pre><code class="bash">socat TCP-LISTEN:1521,reuseaddr,fork TCP:1.119.199.37:9521
+</code></pre>
+<h3 id="后台运行"><a href="#后台运行" class="headerlink" title="后台运行"></a>后台运行</h3><p>如果你希望<code>socat</code>在后台运行，可以使用<code>nohup</code>命令：</p>
+<pre><code class="bash">nohup socat TCP-LISTEN:1521,reuseaddr,fork TCP:1.119.199.37:9521 &amp;
+</code></pre>
+<h3 id="检查端口转发是否成功"><a href="#检查端口转发是否成功" class="headerlink" title="检查端口转发是否成功"></a>检查端口转发是否成功</h3><p>你可以通过以下命令来检查端口转发是否成功：</p>
+<ul>
+<li>查看端口是否在监听：</li>
+</ul>
+<pre><code class="bash">lsof -i :1521
+# 或者
+netstat -an | grep 1521
+</code></pre>
+<h3 id="停止转发"><a href="#停止转发" class="headerlink" title="停止转发"></a>停止转发</h3><p>如果你需要停止端口转发，可以按照以下步骤操作：</p>
+<ul>
+<li>首先找到<code>socat</code>进程：</li>
+</ul>
+<pre><code class="bash">ps aux | grep socat
+</code></pre>
+<ul>
+<li>然后终止进程：</li>
+</ul>
+<pre><code class="bash">kill &lt;进程ID&gt;
+</code></pre>
+<h3 id="创建shell脚本方便使用"><a href="#创建shell脚本方便使用" class="headerlink" title="创建shell脚本方便使用"></a>创建shell脚本方便使用</h3><p>为了方便管理端口转发，可以创建一个shell脚本：</p>
+<ol>
+<li>创建脚本文件：</li>
+</ol>
+<pre><code class="bash">vim ~/oracle-forward.sh
+</code></pre>
+<ol start="2">
+<li>添加以下内容：</li>
+</ol>
+<pre><code class="bash">#!/bin/bash
+case &quot;$1&quot; in
+  start)
+    nohup socat TCP-LISTEN:1521,reuseaddr,fork TCP:1.119.199.37:9521 &amp;
+    echo &quot;Port forwarding started&quot;
+    ;;
+  stop)
+    pkill socat
+    echo &quot;Port forwarding stopped&quot;
+    ;;
+  status)
+    if pgrep socat &gt; /dev/null
+    then
+      echo &quot;Port forwarding is running&quot;
+      netstat -an | grep 1521
+    else
+      echo &quot;Port forwarding is not running&quot;
+    fi
+    ;;
+  *)
+    echo &quot;Usage: $0 &#123;start|stop|status&#125;&quot;
+    exit 1
+    ;;
+esac
+</code></pre>
+<ol start="3">
+<li>添加执行权限：</li>
+</ol>
+<pre><code class="bash">chmod +x ~/oracle-forward.sh
+</code></pre>
+<ol start="4">
+<li>使用以下命令来管理端口转发：</li>
+</ol>
+<ul>
+<li>启动转发：</li>
+</ul>
+<pre><code class="bash">./oracle-forward.sh start
+</code></pre>
+<ul>
+<li>查看状态：</li>
+</ul>
+<pre><code class="bash">./oracle-forward.sh status
+</code></pre>
+<ul>
+<li>停止转发：</li>
+</ul>
+<pre><code class="bash">./oracle-forward.sh stop
+</code></pre>
+<h3 id="数据库连接配置"><a href="#数据库连接配置" class="headerlink" title="数据库连接配置"></a>数据库连接配置</h3><p>设置好端口转发后，你的数据库连接配置应该使用本地转发的端口。例如，如果你使用的是Spring框架，可以这样配置：</p>
+<pre><code class="yaml">spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/your_service_name
+    username: your_username
+    password: your_password
+</code></pre>
+<p>这样，你就可以通过本地转发的端口连接到远程数据库了。</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
