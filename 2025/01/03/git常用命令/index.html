@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Git 命令与操作流程详细总结 | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Git 命令与操作流程详细总结 | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-12-29T06:13:03.000Z">
+<meta property="article:modified_time" content="2024-12-29T06:13:03.252Z">
+<meta property="article:author" content="pohongying">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/darcula.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>pohongying</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/pohongying"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+    <a class="more-menus">更多菜单</a>
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(7)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="工具">
+            
+            工具
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="算法">
+            <i class="fold iconfont icon-right"></i>
+            算法
+            <small>(2)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="算法&lt;---&gt;二叉树">
+            
+            二叉树
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="liunx">
+            
+            liunx
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+                <a class="dynamic-menu "
+                   target="_blank"
+                        
+                   href="https://github.com/pohongying">github</a>
+        
+    </div>
+    <div>
+        
+            <a class="about  site_url"
+               
+               href="/about">关于</a>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="7">
+<input type="hidden" id="yelog_site_word_count" value="8.6k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>层序遍历</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>端口转发</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>装系统</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Apidoc</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>dfs</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>git</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>mac</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>socat</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 "
+           href="/2025/01/03/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Git 命令与操作流程详细总结">Git 命令与操作流程详细总结</span>
+            <span class="post-date" title="2025-01-03 21:39:22">2025/01/03</span>
+        </a>
+        
+        
+        <a  class="全部文章 liunx "
+           href="/2025/01/02/socat%E5%91%BD%E4%BB%A4/"
+           data-tag="mac,端口转发,socat"
+           data-author="" >
+            <span class="post-title" title="在Mac上使用socat实现端口转发">在Mac上使用socat实现端口转发</span>
+            <span class="post-date" title="2025-01-02 12:45:16">2025/01/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 算法 二叉树 "
+           href="/2025/01/01/%E5%8F%8D%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A5%87%E6%95%B0%E5%B1%82/"
+           data-tag="dfs"
+           data-author="" >
+            <span class="post-title" title="反转二叉树的奇数层">反转二叉树的奇数层</span>
+            <span class="post-date" title="2025-01-01 23:55:34">2025/01/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 算法 二叉树 "
+           href="/2025/01/01/%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"
+           data-tag="层序遍历"
+           data-author="" >
+            <span class="post-title" title="层序遍历总结">层序遍历总结</span>
+            <span class="post-date" title="2025-01-01 22:08:01">2025/01/01</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2024/12/31/Apidoc-%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7/"
+           data-tag="Apidoc"
+           data-author="" >
+            <span class="post-title" title="Apidoc-文档生成工具">Apidoc-文档生成工具</span>
+            <span class="post-date" title="2024-12-31 14:09:22">2024/12/31</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2024/12/29/mac%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F/"
+           data-tag="装系统"
+           data-author="" >
+            <span class="post-title" title="mac重装系统">mac重装系统</span>
+            <span class="post-date" title="2024-12-29 19:44:41">2024/12/29</span>
+        </a>
+        
+        
+        <a  class="全部文章 工具 "
+           href="/2024/12/29/git%E7%94%A8%E6%B3%95%E5%92%8C%E9%85%8D%E7%BD%AE/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git 的用法和配置">git 的用法和配置</span>
+            <span class="post-date" title="2024-12-29 16:16:44">2024/12/29</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Git 命令与操作流程详细总结</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-01-04 22:29:09'>2025-01-03 21:39</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81Git-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">一、Git 基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Git-%E9%85%8D%E7%BD%AE"><span class="toc-text">二、Git 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">用户信息配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-Key-%E9%85%8D%E7%BD%AE"><span class="toc-text">SSH Key 配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Git-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4%E6%AF%94%E8%BE%83"><span class="toc-text">三、Git 基础命令比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="toc-text">克隆仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%8E%E6%8F%90%E4%BA%A4"><span class="toc-text">添加与提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E4%B8%8E%E6%8B%89%E5%8F%96"><span class="toc-text">推送与拉取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="toc-text">分支管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C"><span class="toc-text">撤销操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%9B%B4%E6%96%B0%E4%B8%8E%E5%90%88%E5%B9%B6"><span class="toc-text">代码更新与合并</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%AB%98%E7%BA%A7%E5%91%BD%E4%BB%A4%E6%AF%94%E8%BE%83"><span class="toc-text">四、高级命令比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%A4%9A%E6%AC%A1-commit"><span class="toc-text">合并多次 commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E6%8C%87%E5%AE%9A-commit"><span class="toc-text">合并指定 commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E4%BB%A3%E7%A0%81"><span class="toc-text">缓存代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81Git-%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">五、Git 对象模型与工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E5%AF%B9%E8%B1%A1"><span class="toc-text">Git 的三种基本对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E7%9A%84%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%E8%BF%87%E7%A8%8B"><span class="toc-text">完整的一次提交过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%82%E5%AD%98%E5%8C%BA%EF%BC%88Stage-Index%EF%BC%89"><span class="toc-text">暂存区（Stage&#x2F;Index）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-git-%E5%BA%95%E5%B1%82%E5%91%BD%E4%BB%A4%E6%A8%A1%E6%8B%9F-commit"><span class="toc-text">使用 git 底层命令模拟 commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-reset-%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="toc-text">git reset 的三种模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E6%9A%82%E5%AD%98%E5%8C%BA%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E5%88%B0%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="toc-text">从暂存区复制文件到工作区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%86%B2%E7%AA%81%E4%B8%8E%E5%BF%AB%E9%80%9F%E5%90%88%E5%B9%B6"><span class="toc-text">合并冲突与快速合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%A4%E9%94%80-commit"><span class="toc-text">撤销 commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-rebase"><span class="toc-text">git rebase</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">六、其他常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="toc-text">初始化仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">关联远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%8A%B6%E6%80%81"><span class="toc-text">查看工作区状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B-commit-%E6%97%A5%E5%BF%97"><span class="toc-text">查看 commit 日志</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%88%86%E6%94%AF"><span class="toc-text">管理分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E5%B7%AE%E5%BC%82"><span class="toc-text">对比差异</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%9B%B4%E6%96%B0"><span class="toc-text">获取更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E4%BB%A3%E7%A0%81"><span class="toc-text">合并代码</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、Git-基础概念"><a href="#一、Git-基础概念" class="headerlink" title="一、Git 基础概念"></a>一、Git 基础概念</h2><p>Git 是一个分布式版本控制系统，它通过以下四个区域来管理代码：</p>
+<ul>
+<li><strong>工作区（Workspace）</strong>：开发者可见的文件集合，即本地工作目录。</li>
+<li><strong>暂存区（Index&#x2F;Stage）</strong>：文件改动的过渡区域，可以通过 <code>git add</code> 命令将改动添加到此区域。</li>
+<li><strong>本地仓库（Repository）</strong>：保存项目历史记录的数据库，可以通过 <code>git commit</code> 命令将暂存区的改动提交到本地仓库。</li>
+<li><strong>远程仓库（Remote）</strong>：托管在服务器上的代码仓库，可以通过 <code>git push</code> 和 <code>git fetch</code> 命令与远程仓库进行交互.</li>
+</ul>
+<h2 id="二、Git-配置"><a href="#二、Git-配置" class="headerlink" title="二、Git 配置"></a>二、Git 配置</h2><h3 id="用户信息配置"><a href="#用户信息配置" class="headerlink" title="用户信息配置"></a>用户信息配置</h3><p>配置全局用户名和邮箱，以便在提交时识别作者。</p>
+<pre><code class="bash">git config --global user.name &quot;yourname&quot;  # 设置全局用户名
+git config --global user.email &quot;youremail@xxx.com&quot;  # 设置全局邮箱
+git config --global --list  # 列出当前的配置信息
+</code></pre>
+<h3 id="SSH-Key-配置"><a href="#SSH-Key-配置" class="headerlink" title="SSH Key 配置"></a>SSH Key 配置</h3><p>生成 SSH Key 并添加到远程仓库，以便进行安全的代码提交。</p>
+<pre><code class="bash">ssh-keygen -t rsa -C &quot;youremail@xxx.com&quot;  # 生成新的 SSH Key
+cat ~/.ssh/id_rsa.pub  # 查看公钥
+</code></pre>
+<h2 id="三、Git-基础命令比较"><a href="#三、Git-基础命令比较" class="headerlink" title="三、Git 基础命令比较"></a>三、Git 基础命令比较</h2><h3 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h3><p>克隆远程仓库到本地。</p>
+<pre><code class="bash">git clone &lt;git url&gt;  # 克隆远程仓库到本地，默认克隆所有分支
+git clone &lt;git url&gt; -b branch1  # 克隆远程仓库到本地，并切换到指定分支
+git clone &lt;git url&gt; my-project  # 克隆远程仓库到本地并指定本地仓库名称
+</code></pre>
+<h3 id="添加与提交"><a href="#添加与提交" class="headerlink" title="添加与提交"></a>添加与提交</h3><p>将文件添加到暂存区，并提交到本地仓库。</p>
+<pre><code class="bash">git add .  # 添加当前目录的所有文件到暂存区
+git add &lt;file&gt;  # 添加指定文件到暂存区
+git commit -m &quot;your commit message&quot;  # 提交暂存区的内容到本地仓库，并添加提交信息
+</code></pre>
+<h3 id="推送与拉取"><a href="#推送与拉取" class="headerlink" title="推送与拉取"></a>推送与拉取</h3><p>推送本地更改到远程仓库，或从远程仓库拉取更改。</p>
+<ul>
+<li><p><strong>推送（Push）</strong>：</p>
+<ul>
+<li><code>git push</code>：推送当前分支到远程仓库。</li>
+<li><code>git push -f</code>：强制推送，用于覆盖远程分支的历史.</li>
+</ul>
+</li>
+<li><p><strong>拉取（Pull）</strong>：</p>
+<ul>
+<li><code>git pull</code>：从远程仓库拉取内容并合并到当前分支（默认为 <code>git fetch</code> + <code>git merge</code>）.</li>
+<li><code>git pull --rebase</code>：从远程仓库拉取内容并重新应用到当前分支上（默认为 <code>git fetch</code> + <code>git rebase</code>）.</li>
+</ul>
+</li>
+</ul>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p>创建、切换和删除分支。</p>
+<ul>
+<li><p><strong>创建与切换分支（Branch）</strong>：</p>
+<ul>
+<li><code>git branch</code>：列出所有本地分支.</li>
+<li><code>git checkout &lt;branch&gt;</code>：切换到指定分支.</li>
+<li><code>git checkout -b &lt;branch&gt;</code>：创建并切换到新分支.</li>
+</ul>
+</li>
+<li><p><strong>删除分支（Delete Branch）</strong>：</p>
+<ul>
+<li><code>git branch -d &lt;branch&gt;</code>：删除本地分支，并且会自动合并.</li>
+<li><code>git branch -D &lt;branch&gt;</code>：强制删除本地分支，无论是否合并.</li>
+</ul>
+</li>
+</ul>
+<h3 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h3><p>撤销工作区、暂存区或已提交的更改.</p>
+<ul>
+<li><p><strong>重置（Reset）</strong>：</p>
+<ul>
+<li><code>git reset &lt;commit&gt;</code>：重置本地仓库的指定提交，但不改变工作区.</li>
+<li><code>git reset --hard &lt;commit&gt;</code>：重置本地仓库的指定提交，并清空工作区和暂存区的更改.</li>
+</ul>
+</li>
+<li><p><strong>回滚（Revert）</strong>：</p>
+<ul>
+<li><code>git revert &lt;commit&gt;</code>：撤销指定提交的更改，创建一个新的提交来抵消指定提交的效果.</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码更新与合并"><a href="#代码更新与合并" class="headerlink" title="代码更新与合并"></a>代码更新与合并</h3><ul>
+<li><p><strong>Fetch vs Pull</strong>：</p>
+<ul>
+<li><code>git fetch</code>：仅从远程仓库获取更新，不会自动合并.</li>
+<li><code>git pull</code>：从远程仓库拉取更新并合并到当前分支.</li>
+</ul>
+</li>
+<li><p><strong>Merge vs Rebase</strong>：</p>
+<ul>
+<li><code>git merge</code>：将指定分支的改动合并到当前分支，保留两个分支的历史.</li>
+<li><code>git rebase</code>：将当前分支的改动重新应用到基于其他分支的最新基础上，使得历史线性化.</li>
+</ul>
+</li>
+</ul>
+<h2 id="四、高级命令比较"><a href="#四、高级命令比较" class="headerlink" title="四、高级命令比较"></a>四、高级命令比较</h2><h3 id="合并多次-commit"><a href="#合并多次-commit" class="headerlink" title="合并多次 commit"></a>合并多次 commit</h3><p>将多次提交合并为一次.</p>
+<ul>
+<li><strong>交互式变基（Rebase -i）</strong>：<ul>
+<li><code>git rebase -i &lt;start commit-sha&gt;</code>：交互式变基，可以修改、合并或删除提交.</li>
+</ul>
+</li>
+</ul>
+<h3 id="合并指定-commit"><a href="#合并指定-commit" class="headerlink" title="合并指定 commit"></a>合并指定 commit</h3><p>选择性地将某个分支的特定提交应用到当前分支.</p>
+<ul>
+<li><strong>Cherry-Pick</strong>：<ul>
+<li><code>git cherry-pick &lt;commit-sha&gt;</code>：将指定的提交应用到当前分支.</li>
+</ul>
+</li>
+</ul>
+<h3 id="缓存代码"><a href="#缓存代码" class="headerlink" title="缓存代码"></a>缓存代码</h3><p>临时存储未完成的工作，以便切换分支或进行其他操作.</p>
+<ul>
+<li><strong>Stash</strong>：<ul>
+<li><code>git stash</code>：临时存储工作区的更改.</li>
+<li><code>git stash pop</code>：应用最近一次缓存的更改，并从缓存列表中移除.</li>
+<li><code>git stash apply</code>：应用最近一次缓存的更改，但不从缓存列表中移除.</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、Git-对象模型与工作原理"><a href="#五、Git-对象模型与工作原理" class="headerlink" title="五、Git 对象模型与工作原理"></a>五、Git 对象模型与工作原理</h2><h3 id="Git-的三种基本对象"><a href="#Git-的三种基本对象" class="headerlink" title="Git 的三种基本对象"></a>Git 的三种基本对象</h3><ul>
+<li><p><strong>Blob</strong>：</p>
+<ul>
+<li><strong>作用</strong>：存储文件内容.</li>
+<li><strong>工作原理</strong>：<ol>
+<li>将文件内容进行 SHA-1 哈希计算，得到一个唯一的哈希值作为文件名.</li>
+<li>使用 zlib 压缩算法压缩文件内容，生成 blob 对象.</li>
+</ol>
+<ul>
+<li><strong>特点</strong>：利用哈希算法的“雪崩效应”，即使文件内容只改变一个字符，产生的哈希值也会完全不同.这样，Git 只需要比较文件的哈希值，就能立即知道文件是否被修改，而不需要逐字节地比较文件内容，大大提高了效率.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Tree</strong>：</p>
+<ul>
+<li><strong>作用</strong>：相当于 Git 中的目录结构，用于组织和管理文件.</li>
+<li><strong>工作原理</strong>：<ol>
+<li>记录目录下所有内容的信息：<ul>
+<li>文件对应的 blob 对象.</li>
+<li>子目录对应的 tree 对象.</li>
+</ul>
+</li>
+<li>为每个目录生成一个唯一的哈希值，这样任何目录结构的变化都能被追踪.</li>
+</ol>
+<ul>
+<li><strong>特点</strong>：这种层级结构让 Git 能够高效地管理从单个文件到整个项目的所有内容变化.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Commit</strong>：</p>
+<ul>
+<li><strong>作用</strong>：保存每次提交的信息.</li>
+<li><strong>包含信息</strong>：<ol>
+<li><strong>tree</strong>：指向项目根目录的 Tree 对象.</li>
+<li><strong>parent</strong>：指向一个或多个父 Commit.<ul>
+<li>常规提交只有一个父 Commit.</li>
+<li>合并提交会有多个父 Commit，记录了所有被合并的分支.</li>
+</ul>
+</li>
+<li><strong>author&#x2F;committer</strong>：提交者信息.</li>
+<li><strong>message</strong>：提交信息.</li>
+</ol>
+<ul>
+<li><strong>特点</strong>：这种设计让 Git 能够完整记录项目的历史，并支持复杂的分支合并操作.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="完整的一次提交过程"><a href="#完整的一次提交过程" class="headerlink" title="完整的一次提交过程"></a>完整的一次提交过程</h3><ul>
+<li><p><strong>git add 文件</strong>：</p>
+<ul>
+<li>假设我们修改了 readme.md 文件，执行 <code>git add</code> 时会发生以下操作：<ol>
+<li>Git 读取 readme.md 的内容.</li>
+<li>将内容用 zlib 算法压缩，创建一个 blob 对象.</li>
+<li>用 SHA1 算法计算这个 blob 对象的哈希值.</li>
+<li>用这个哈希值作为文件名，将 blob 对象保存到 Git 仓库中.</li>
+</ol>
+<ul>
+<li>这样，每个文件版本都会有一个唯一的标识（哈希值），Git 可以精确地追踪文件的每次变化.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>git commit</strong>：</p>
+<ul>
+<li>执行 <code>git commit</code> 时，Git 会按以下步骤创建新的提交：<ol>
+<li>创建新的 Tree 对象：<ul>
+<li>读取当前仓库的 Tree 对象（保存了所有文件的目录结构）.</li>
+<li>将 <code>git add</code> 创建的新 Blob 对象更新到 Tree 中.</li>
+<li>为这个新的目录结构创建一个新的 Tree 对象.</li>
+</ul>
+</li>
+<li>创建新的 Commit 对象：<ul>
+<li>记录新 Tree 对象的哈希值.</li>
+<li>记录父 Commit 的哈希值.</li>
+<li>保存提交信息（commit message）.</li>
+<li>保存提交者信息和时间戳.</li>
+</ul>
+</li>
+<li>更新分支指针：<ul>
+<li>将当前分支指向这个新的 Commit 对象.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>这样就完成了一次完整的提交，保存了项目的一个新版本.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="暂存区（Stage-Index）"><a href="#暂存区（Stage-Index）" class="headerlink" title="暂存区（Stage&#x2F;Index）"></a>暂存区（Stage&#x2F;Index）</h3><ul>
+<li><strong>作用</strong>：暂存区是 Git 中的一个重要概念，它是一个临时的 Tree 对象，默认与仓库的 HEAD 指针指向的 Tree 对象相同，内容也相同.</li>
+<li><strong>工作原理</strong>：<ol>
+<li>当执行 <code>git add</code> 时：<ul>
+<li>创建新的 Blob 对象.</li>
+<li>更新暂存区的 Tree 对象，指向这些新的 Blob.</li>
+</ul>
+</li>
+<li>默认情况下：<ul>
+<li>暂存区的 Tree 对象与最近一次提交的 Tree 对象结构相同.</li>
+<li>只有执行 <code>git add</code> 后，相应的文件引用才会更新.</li>
+</ul>
+</li>
+<li>特殊操作：<ul>
+<li>执行 <code>git reset --soft</code> 时，只移动 HEAD 指针，暂存区保持不变.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="使用-git-底层命令模拟-commit"><a href="#使用-git-底层命令模拟-commit" class="headerlink" title="使用 git 底层命令模拟 commit"></a>使用 git 底层命令模拟 commit</h3><ul>
+<li><p><strong>创建 Blob 对象</strong>：</p>
+<pre><code class="bash">git hash-object -w -t blob hello.txt
+ce013625030ba8dba906f756967f9e9ca394464a
+</code></pre>
+<ul>
+<li>这里，我们可以看到 <code>git hash-object</code> 命令的输出，它生成了一个新的 Blob 对象，并且返回了这个对象的哈希值.我们直接使用 zlib 命令，在 <code>.git</code> 文件夹中找到这个 blob 文件并解压.</li>
+</ul>
+<pre><code class="bash">zlib-flate -uncompress &lt; .git/objects/ce/013625030ba8dba906f756967f9e9c
+a394464a
+blob 6hello
+</code></pre>
+</li>
+<li><p><strong>更新暂存区的 Tree 对象</strong>：</p>
+<ol>
+<li>获取当前的 Tree 对象并创建副本：<ul>
+<li>如果此时仓库为空，例如刚初始化，Git 中没有任何东西.那你并不需要获取当前的 Tree 对象.跳到第二步即可.</li>
+<li>但是如果你此时仓库中已经被初始化，那就需要获取当前的 Tree 对象.需要使用 <code>git read-tree HEAD</code> 读取当前 HEAD 的树到暂存区.</li>
+</ul>
+</li>
+<li>在新的 Tree 对象中更新 hello.txt 的引用，指向我们刚创建的 Blob 对象：<pre><code class="bash">git update-index --add --cacheinfo 100644 ce013625030ba8dba906f756967f9e9ca394464a hello.txt
+</code></pre>
+</li>
+<li>然后再把这个新的 Tree 也保存到文件，我们需要执行 <code>git write-tree</code>，这个命令会返回这个 Tree 的哈希值.<pre><code class="bash">git write-tree
+aaa96ced2d9a1c8e72c56b253a0e2fe78393feb7
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p><strong>创建 Commit 对象</strong>：</p>
+<ul>
+<li>这个临时的树，就是 Git 中大名鼎鼎的暂存区.你可以使用 <code>git ls-tree $tree_sha1</code> 来查看它的内容（<code>ls-tree</code> 可以查看任意 Tree 对象的内容），也可以使用 <code>git diff $tree_sha1</code> 来查看它的变化.</li>
+<li>现在我们提交这个树到仓库，并包含 Commit 信息.</li>
+</ul>
+<pre><code class="bash">echo &quot;Project structure&quot; |  git commit-tree aaa96ced2d9a1c8e72c56b253a0e2fe78393feb7
+f2d4b8622737f02c226f16594f32c423b2c39c5c
+</code></pre>
+<ul>
+<li>我们直接解压这个 Commit 对象，可以看到它的内容.</li>
+</ul>
+<pre><code class="bash">zlib-flate -uncompress &lt; .git/objects/f2/d4b8622737f02c226f16594f32c423b2c39c5c
+commit 212tree aaa96ced2d9a1c8e72c56b253a0e2fe78393feb7
+author lll &lt;abc@mail.com&gt; 1735620034 +0800
+committer lll &lt;abc@mail.com&gt; 1735620034 +0800
+
+Project structure
+</code></pre>
+</li>
+<li><p><strong>更新 HEAD 指针</strong>：</p>
+<ul>
+<li>这样，我们就完成了一次完整的提交，保存了项目的一个新版本.使用 <code>git log</code> 命令，可以查看本次提交的记录.</li>
+</ul>
+<pre><code class="bash">git update-ref refs/heads/master f2d4b8622737f02c226f16594f32c423b2c39c5c
+git log
+commit f2d4b8622737f02c226f16594f32c423b2c39c5c (HEAD -&gt; master)
+Author: lll &lt;abc@mail.com&gt;
+Date:   Tue Dec 31 12:40:34 2024 +0800
+
+    Project structure
+</code></pre>
+</li>
+</ul>
+<h3 id="git-reset-的三种模式"><a href="#git-reset-的三种模式" class="headerlink" title="git reset 的三种模式"></a>git reset 的三种模式</h3><ul>
+<li><p><strong>git reset –soft</strong>：</p>
+<ul>
+<li><strong>操作</strong>：更新 HEAD 指针，指向上一次提交的 Commit 对象，暂存区指针不动，依旧指向本次 Commit 提交的 Tree 对象.</li>
+<li><strong>特点</strong>：<ul>
+<li>只移动 HEAD 指针，不改变任何文件内容.</li>
+<li>保留了暂存区的所有改动.</li>
+<li>常用场景：<ol>
+<li>修改最近一次的提交信息.</li>
+<li>将多个提交合并为一个提交.</li>
+<li>在不丢失任何改动的情况下重新组织提交.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>模拟实现</strong>：使用 Git 底层命令来模拟 <code>git reset --soft</code> 的效果.首先使用 <code>git rev-parse HEAD</code> 获取当前 Commit 的引用，然后通过 <code>git rev-parse HEAD^1</code> 获取父 Commit 的哈希值，最后使用 <code>git update-ref refs/heads/master HEAD^1</code> 来更新分支指针.这样就实现了只移动 HEAD 指针而保持暂存区不变的效果.</li>
+</ul>
+</li>
+<li><p><strong>git reset –mixed</strong>：</p>
+<ul>
+<li><strong>操作</strong>：更新 HEAD 指针，指向上一次提交的 Commit 对象，暂存区同时也更新，指向上一次提交的 Tree 对象.但是工作区不动.工作区就是你当前在磁盘系统上的项目文件.</li>
+<li><strong>特点</strong>：<ul>
+<li>保留工作区的所有改动.</li>
+<li>典型应用场景：当你不小心提交了一些不应该提交的文件，或者不该提交的代码，但又不想丢失工作区的修改时.通过 <code>git reset --mixed</code>，你可以重置暂存区到上一个状态，重新选择要提交的文件.</li>
+<li>为什么称为“mixed”（混合）重置：它在保留工作区的同时，让你能重新组织暂存区的内容.</li>
+</ul>
+</li>
+<li><strong>模拟实现</strong>：通过上面的描述，我们可以使用 <code>git read-tree</code> 命令来模拟 <code>git reset --soft</code> 的效果.核心要点在于修改 HEAD 和暂存区指针，但不改变工作区的内容.</li>
+</ul>
+</li>
+<li><p><strong>git reset –hard</strong>：</p>
+<ul>
+<li><strong>操作</strong>：更新 HEAD 指针，指向上一次提交的 Commit 对象，暂存区同时也更新，指向上一次提交的 Tree 对象，同时把 Tree 对象中的文件，解压覆盖工作区.</li>
+</ul>
+</li>
+</ul>
+<h3 id="从暂存区复制文件到工作区"><a href="#从暂存区复制文件到工作区" class="headerlink" title="从暂存区复制文件到工作区"></a>从暂存区复制文件到工作区</h3><p>要从暂存区复制文件到工作区，需要用到两个底层命令：</p>
+<ul>
+<li><p><strong>git read-tree</strong>：</p>
+<ul>
+<li><strong>作用</strong>：读取和更新暂存区的状态.它是 <code>git checkout</code> 和 <code>git restore</code> 等命令的基础，主要功能是：<ul>
+<li>读取 Git 对象库中的 Tree 对象，更新暂存区的状态.</li>
+<li>在合并时，可以将多个 Tree 对象的内容合并到暂存区.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>git checkout-index</strong>：</p>
+<ul>
+<li><strong>作用</strong>：从暂存区复制文件到工作区.它的工作过程是：<ol>
+<li>读取暂存区中的文件信息（包含 Blob 对象的引用）.</li>
+<li>从对象库中读取对应的 Blob 对象.</li>
+<li>将 Blob 对象的内容解压到工作区.</li>
+</ol>
+<ul>
+<li>如图所示，当我们需要从暂存区恢复一个文件到工作区时，Git 会先通过 <code>read-tree</code> 命令读取暂存区的信息，找到文件对应的 Blob 对象，然后使用 <code>checkout-index</code> 命令将 Blob 对象的内容解压到工作区.这就是 <code>git checkout -- &lt;file&gt;</code> 或 <code>git restore &lt;file&gt;</code> 命令背后的工作原理.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="合并冲突与快速合并"><a href="#合并冲突与快速合并" class="headerlink" title="合并冲突与快速合并"></a>合并冲突与快速合并</h3><ul>
+<li><p><strong>快速合并（Fast-forward）</strong>：</p>
+<ul>
+<li><strong>条件</strong>：当一个分支的所有提交都是另一个分支的直接后继时，Git 可以执行快速合并.</li>
+<li><strong>过程</strong>：这意味着两个分支的文件树之间没有任何冲突，因为一个分支的历史完全包含了另一个分支的历史.在这种情况下，Git 只需要将当前分支的指针“快进”到目标分支的位置即可，无需创建新的合并提交.</li>
+</ul>
+</li>
+<li><p><strong>合并冲突</strong>：</p>
+<ul>
+<li><strong>产生原因</strong>：当两个分支同时修改了同一个文件的同一个位置时，Git 就无法自动决定应该使用哪个版本的内容，这就产生了合并冲突.</li>
+<li><strong>解决步骤</strong>：<ol>
+<li>打开发生冲突的文件.</li>
+<li>找到并分析冲突内容.</li>
+<li>决定最终要保留的内容.</li>
+<li>删除所有的冲突标记（<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>，<code>=======</code>，<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature</code>）.</li>
+<li>保存文件.</li>
+<li>使用 <code>git add</code> 标记冲突已解决.</li>
+<li>使用 <code>git commit</code> 完成合并.</li>
+</ol>
+<ul>
+<li>这样就完成了一次冲突解决，新的 Commit 将会同时包含两个分支的历史.</li>
+</ul>
+</li>
+<li><strong>自动解决冲突的策略</strong>：<ul>
+<li><code>git merge -X ours</code> 在冲突时优先使用当前分支（我们的）的修改.</li>
+<li><code>git merge -X theirs</code> 在冲突时优先使用要合并分支（他们的）的修改.</li>
+<li>这些策略可以帮助我们在某些场景下自动化解决冲突，但要谨慎使用，因为它们可能会忽略掉重要的改动.建议只在确定优先级的情况下使用这些选项.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="撤销-commit"><a href="#撤销-commit" class="headerlink" title="撤销 commit"></a>撤销 commit</h3><ul>
+<li><p><strong>使用 git revert</strong>：</p>
+<ul>
+<li><strong>原理</strong>：Git 的核心设计理念之一是保持完整的历史记录.因此，撤销一个提交并不是简单地删除它，而是通过创建一个新的提交来“反转”之前的修改.这样做可以确保所有的变更都有迹可循，同时也让其他协作者能够清楚地看到这些变更的来龙去脉.</li>
+<li><strong>步骤</strong>：<ol>
+<li>使用 <code>git rev-parse HEAD~2</code> 获取要撤销的 Commit 的引用（假设是倒数第三个提交）.</li>
+<li>使用 <code>git rev-parse HEAD~3</code> 获取该 Commit 的父 Commit 引用.</li>
+<li>使用 <code>git diff HEAD~3 HEAD~2</code> 命令获取这两个 Commit 之间的差异，并生成一个 patch 文件：<code>git diff HEAD~3 HEAD~2 &gt; changes.patch</code>.</li>
+<li>使用 <code>git apply --reverse changes.patch</code> 命令反向应用这个 patch，相当于撤销这个 Commit 的修改.</li>
+<li>最后使用 <code>git add .</code> 和 <code>git commit -m &quot;Revert commit xxx&quot;</code> 来提交这个撤销操作.</li>
+</ol>
+<ul>
+<li>通过 <code>--reverse</code> 参数，我们告诉 Git 要反向应用这个 patch，也就是撤销而不是应用这些修改.这样就实现了撤销特定 Commit 的效果，同时保留了完整的操作记录.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>处理合并提交的撤销</strong>：</p>
+<ul>
+<li><strong>特殊之处</strong>：合并提交的特殊之处在于它有多个父 Commit.这时，如果直接使用 <code>git revert</code>，Git 会遇到一个问题：它不知道应该基于哪个父 Commit 来生成反向修改.</li>
+<li><strong>步骤</strong>：<ul>
+<li>当我们撤销一个合并提交时，我们需要明确告诉 Git：<ol>
+<li>是要撤销合并本身.</li>
+<li>还是要保留其中一个父分支的修改.</li>
+</ol>
+</li>
+<li>这就是为什么在处理合并提交时，我们需要使用 <code>git revert -m &lt;parent-number&gt;</code> 命令，其中 <code>parent-number</code> 指定要保留哪个父分支的修改（1 表示第一个父分支，2 表示第二个父分支）.</li>
+<li>如图所示，当我们需要撤销一个合并提交时，必须选择要保留哪个父分支的修改.这是因为合并提交包含了来自两个分支的改动，Git 需要知道我们想要撤销哪些改动.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h3><ul>
+<li><strong>作用</strong>：<code>git rebase</code> 是一个强大的命令，它可以帮助我们重新组织提交历史.</li>
+<li><strong>工作原理</strong>：<ul>
+<li><p><strong>合并分支</strong>：</p>
+<ul>
+<li>与 <code>merge</code> 不同，<code>rebase</code> 通过改变提交的基础（base）来合并分支.从底层实现来看，<code>rebase</code> 的过程是这样的：<ol>
+<li>找到两个分支的共同祖先.</li>
+<li>对比当前分支相对于祖先的历次提交，提取每次提交的差异（patch）.</li>
+<li>将当前分支指向目标分支的最新提交.</li>
+<li>按照提交的顺序，将之前保存的 patch 依次应用到当前分支.</li>
+</ol>
+<ul>
+<li>这种方式相当于把我们的修改在目标分支上重新“重放”一遍，使提交历史呈现出一条直线，更加清晰易读.虽然最终的代码改动是一样的，但是提交历史会被重写.</li>
+<li>如图所示，<code>rebase</code> 的核心是通过生成 patch 文件来保存修改，然后将这些修改重新应用到新的基础上.patch 文件记录了具体的改动内容（增加、删除或修改的行），这就是为什么即使在新的位置重放，也能保持相同的改动效果.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>修改提交历史</strong>：</p>
+<ul>
+<li>正是因为 rebase 是基于 patch 的重放机制，而不是直接修改 Git 对象，所以我们可以在重放过程中对这些 patch 进行编辑.通过交互模式（<code>git rebase -i</code>），我们可以在重放之前对提交进行多种操作：<ul>
+<li>重新排序提交.</li>
+<li>合并多个提交.</li>
+<li>修改提交信息.</li>
+<li>删除某些提交.</li>
+<li>将一个提交拆分成多个.</li>
+</ul>
+</li>
+<li>这种能力使得我们可以在代码推送到远程仓库之前，整理和优化我们的提交历史，使其更加清晰和有意义.但需要注意的是，一旦提交已经推送到公共仓库，就应该避免使用 <code>rebase</code> 来修改历史，因为这会给其他开发者带来麻烦.</li>
+<li>如图所示，当我们使用 <code>squash</code> 命令合并提交时，Git 实际上是将每个提交的改动提取为 patch 文件，然后将这些 patch 合并成一个新的 patch，最后将合并后的 patch 应用到目标位置.这就是为什么我们能够保持改动的完整性，同时简化提交历史.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="六、其他常用命令"><a href="#六、其他常用命令" class="headerlink" title="六、其他常用命令"></a>六、其他常用命令</h2><h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><p>在当前目录初始化一个新的 Git 仓库.</p>
+<pre><code class="bash">git init  # 初始化一个新的 Git 仓库
+</code></pre>
+<h3 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h3><p>关联远程仓库地址.</p>
+<pre><code class="bash">git remote add origin &lt;git url&gt;  # 添加远程仓库
+</code></pre>
+<h3 id="查看工作区状态"><a href="#查看工作区状态" class="headerlink" title="查看工作区状态"></a>查看工作区状态</h3><p>查看工作区、暂存区的状态.</p>
+<pre><code class="bash">git status  # 查看当前工作区和暂存区的状态
+</code></pre>
+<h3 id="查看-commit-日志"><a href="#查看-commit-日志" class="headerlink" title="查看 commit 日志"></a>查看 commit 日志</h3><p>查看提交历史.</p>
+<pre><code class="bash">git log  # 查看提交历史
+</code></pre>
+<h3 id="管理分支"><a href="#管理分支" class="headerlink" title="管理分支"></a>管理分支</h3><p>创建、删除和重命名分支.</p>
+<pre><code class="bash">git branch -d &lt;branch&gt;  # 删除本地分支
+</code></pre>
+<h3 id="对比差异"><a href="#对比差异" class="headerlink" title="对比差异"></a>对比差异</h3><p>比较工作区、暂存区和分支之间的差异.</p>
+<pre><code class="bash">git diff  # 比较工作区和暂存区的差异
+</code></pre>
+<h3 id="获取更新"><a href="#获取更新" class="headerlink" title="获取更新"></a>获取更新</h3><p>从远程仓库获取更新，但不自动合并.</p>
+<pre><code class="bash">git fetch  # 获取远程仓库的更新
+</code></pre>
+<h3 id="合并代码"><a href="#合并代码" class="headerlink" title="合并代码"></a>合并代码</h3><p>合并两个分支的更改.</p>
+<pre><code class="bash">git merge &lt;branch&gt;  # 合并指定分支到当前分支
+</code></pre>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2024-2025 pohongying
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/pohongying">github</a>
+    
+</div>
+
+
+</html>
