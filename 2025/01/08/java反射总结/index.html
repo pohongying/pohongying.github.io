@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Java反射机制详解及应用 | Hexo</title>
+  <title>Java反射机制 | Hexo</title>
   <meta name="keywords" content=" 反射 ">
-  <meta name="description" content="Java反射机制详解及应用 | Hexo">
+  <meta name="description" content="Java反射机制 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -354,7 +354,7 @@
            href="/2025/01/08/java%E5%8F%8D%E5%B0%84%E6%80%BB%E7%BB%93/"
            data-tag="反射"
            data-author="" >
-            <span class="post-title" title="Java反射机制详解及应用">Java反射机制详解及应用</span>
+            <span class="post-title" title="Java反射机制">Java反射机制</span>
             <span class="post-date" title="2025-01-08 15:45:08">2025/01/08</span>
         </a>
         
@@ -363,7 +363,7 @@
            href="/2025/01/07/java%E5%8A%A0%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"
            data-tag="文件加载,Properties,ResourceBundle"
            data-author="" >
-            <span class="post-title" title="Java加载配置文件总结">Java加载配置文件总结</span>
+            <span class="post-title" title="Java配置文件加载">Java配置文件加载</span>
             <span class="post-date" title="2025-01-07 16:51:49">2025/01/07</span>
         </a>
         
@@ -450,7 +450,7 @@
     <div class="pjax">
         <article id="post-java反射总结" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Java反射机制详解及应用</h1>
+        <h1 class="article-title">Java反射机制</h1>
     
     <div class="article-meta">
         
@@ -475,7 +475,7 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-01-08 15:46:54'>2025-01-08 15:45</time>
+            发布时间 : <time class="date" title='最后更新: 2025-01-08 15:52:28'>2025-01-08 15:45</time>
         
     </div>
     <div class="article-meta">
@@ -536,16 +536,16 @@ Class stuClass = student.getClass();
 </ul>
 <h3 id="2-2-获取类的构造器"><a href="#2-2-获取类的构造器" class="headerlink" title="2.2 获取类的构造器"></a>2.2 获取类的构造器</h3><p>通过Class对象，我们可以获取到类的构造器，从而在运行时创建类的对象。获取构造器的方法主要有以下几种：</p>
 <ul>
-<li>**getDeclaredConstructors()**：返回类中所有构造器的数组，包括私有的构造器。<pre><code class="java">Constructor[] constructors = stuClass.getDeclaredConstructors();
+<li>getDeclaredConstructors()：返回类中所有构造器的数组，包括私有的构造器。<pre><code class="java">Constructor[] constructors = stuClass.getDeclaredConstructors();
 </code></pre>
 </li>
-<li>**getConstructors()**：返回类中所有公共构造器的数组。<pre><code class="java">Constructor[] constructors = stuClass.getConstructors();
+<li>getConstructors()：返回类中所有公共构造器的数组。<pre><code class="java">Constructor[] constructors = stuClass.getConstructors();
 </code></pre>
 </li>
-<li>**getConstructor(Class&lt;?&gt;… parameterTypes)**：返回类中指定参数类型的公共构造器。<pre><code class="java">Constructor constructor = stuClass.getConstructor(String.class);
+<li>getConstructor(Class&lt;?&gt;… parameterTypes)：返回类中指定参数类型的公共构造器。<pre><code class="java">Constructor constructor = stuClass.getConstructor(String.class);
 </code></pre>
 </li>
-<li>**getDeclaredConstructor(Class&lt;?&gt;… parameterTypes)**：返回类中指定参数类型的构造器，包括私有的构造器。<pre><code class="java">Constructor constructor = stuClass.getDeclaredConstructor(String.class);
+<li>getDeclaredConstructor(Class&lt;?&gt;… parameterTypes)：返回类中指定参数类型的构造器，包括私有的构造器。<pre><code class="java">Constructor constructor = stuClass.getDeclaredConstructor(String.class);
 </code></pre>
 获取到构造器后，可以通过调用构造器的newInstance()方法来创建类的对象。例如：<pre><code class="java">Student student = (Student) constructor.newInstance(&quot;张三&quot;);
 </code></pre>
@@ -553,16 +553,16 @@ Class stuClass = student.getClass();
 </ul>
 <h3 id="2-3-获取类的成员变量"><a href="#2-3-获取类的成员变量" class="headerlink" title="2.3 获取类的成员变量"></a>2.3 获取类的成员变量</h3><p>通过Class对象，我们还可以获取到类的成员变量，并对其进行操作。获取成员变量的方法主要有以下几种：</p>
 <ul>
-<li>**getFields()**：返回类中所有公共成员变量的数组。<pre><code class="java">Field[] fields = stuClass.getFields();
+<li>getFields()：返回类中所有公共成员变量的数组。<pre><code class="java">Field[] fields = stuClass.getFields();
 </code></pre>
 </li>
-<li>**getDeclaredFields()**：返回类中所有成员变量的数组，包括私有的成员变量。<pre><code class="java">Field[] fields = stuClass.getDeclaredFields();
+<li>getDeclaredFields()：返回类中所有成员变量的数组，包括私有的成员变量。<pre><code class="java">Field[] fields = stuClass.getDeclaredFields();
 </code></pre>
 </li>
-<li>**getField(String name)**：返回类中指定名称的公共成员变量。<pre><code class="java">Field field = stuClass.getField(&quot;name&quot;);
+<li>getField(String name)：返回类中指定名称的公共成员变量。<pre><code class="java">Field field = stuClass.getField(&quot;name&quot;);
 </code></pre>
 </li>
-<li>**getDeclaredField(String name)**：返回类中指定名称的成员变量，包括私有的成员变量。<pre><code class="java">Field field = stuClass.getDeclaredField(&quot;age&quot;);
+<li>getDeclaredField(String name)：返回类中指定名称的成员变量，包括私有的成员变量。<pre><code class="java">Field field = stuClass.getDeclaredField(&quot;age&quot;);
 </code></pre>
 获取到成员变量后，可以通过调用成员变量的get()和set()方法来获取和设置成员变量的值。例如：<pre><code class="java">Object value = field.get(student);
 field.set(student, &quot;李四&quot;);
@@ -571,16 +571,16 @@ field.set(student, &quot;李四&quot;);
 </ul>
 <h3 id="2-4-获取类的方法"><a href="#2-4-获取类的方法" class="headerlink" title="2.4 获取类的方法"></a>2.4 获取类的方法</h3><p>通过Class对象，我们可以获取到类的方法，并在运行时调用这些方法。获取方法的方法主要有以下几种：</p>
 <ul>
-<li>**getMethods()**：返回类中所有公共方法的数组，包括继承自父类的方法。<pre><code class="java">Method[] methods = stuClass.getMethods();
+<li>getMethods()：返回类中所有公共方法的数组，包括继承自父类的方法。<pre><code class="java">Method[] methods = stuClass.getMethods();
 </code></pre>
 </li>
-<li>**getDeclaredMethods()**：返回类中所有方法的数组，包括私有的方法。<pre><code class="java">Method[] methods = stuClass.getDeclaredMethods();
+<li>getDeclaredMethods()：返回类中所有方法的数组，包括私有的方法。<pre><code class="java">Method[] methods = stuClass.getDeclaredMethods();
 </code></pre>
 </li>
-<li>**getMethod(String name, Class&lt;?&gt;… parameterTypes)**：返回类中指定名称和参数类型的公共方法。<pre><code class="java">Method method = stuClass.getMethod(&quot;study&quot;, String.class);
+<li>getMethod(String name, Class&lt;?&gt;… parameterTypes)：返回类中指定名称和参数类型的公共方法。<pre><code class="java">Method method = stuClass.getMethod(&quot;study&quot;, String.class);
 </code></pre>
 </li>
-<li>**getDeclaredMethod(String name, Class&lt;?&gt;… parameterTypes)**：返回类中指定名称和参数类型的方法，包括私有的方法。<pre><code class="java">Method method = stuClass.getDeclaredMethod(&quot;eat&quot;, String.class);
+<li>getDeclaredMethod(String name, Class&lt;?&gt;… parameterTypes)：返回类中指定名称和参数类型的方法，包括私有的方法。<pre><code class="java">Method method = stuClass.getDeclaredMethod(&quot;eat&quot;, String.class);
 </code></pre>
 获取到方法后，可以通过调用方法的invoke()方法来执行该方法。例如：<pre><code class="java">method.invoke(student, &quot;Java&quot;);
 </code></pre>
