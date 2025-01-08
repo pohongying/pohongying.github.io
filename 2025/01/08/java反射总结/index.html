@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <title>Java反射机制详解及应用 | Hexo</title>
+  <meta name="keywords" content=" 反射 ">
+  <meta name="description" content="Java反射机制详解及应用 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -54,7 +54,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -446,12 +446,60 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-java反射总结" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%99%B9%E5%BD%B1-Blog%EF%BC%9A%E4%BB%A3%E7%A0%81%E4%B8%96%E7%95%8C%E7%9A%84%E5%85%B1%E4%BA%AB%E8%A7%92%E8%90%BD"><span class="toc-text">虹影 Blog：代码世界的共享角落</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%EF%BC%9A%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E7%9C%9F%E6%8C%9A%E5%BF%83%E6%84%8F"><span class="toc-text">博客：程序员的真挚心意</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2"><span class="toc-text">关于博客</span></a></li></ol></li></ol></li></ol>
+        <h1 class="article-title">Java反射机制详解及应用</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Java">Java</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">反射</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2025-01-08 15:46:54'>2025-01-08 15:45</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81Java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E6%A6%82%E8%BF%B0"><span class="toc-text">一、Java反射机制概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E7%AE%80%E4%BB%8B"><span class="toc-text">1.1 反射机制简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">1.2 反射机制的应用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E7%9A%84%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%BC%8F%E5%92%8C%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">二、Java反射机制的创建模式和常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E8%8E%B7%E5%8F%96Class%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">2.1 获取Class对象的三种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84%E6%9E%84%E9%80%A0%E5%99%A8"><span class="toc-text">2.2 获取类的构造器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-text">2.3 获取类的成员变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">2.4 获取类的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81Java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E7%9A%84%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">三、Java反射机制的源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Class-forName-%E6%96%B9%E6%B3%95%E7%9A%84%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">3.1 Class.forName()方法的源码分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Constructor-newInstance-%E6%96%B9%E6%B3%95%E7%9A%84%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">3.2 Constructor.newInstance()方法的源码分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Method-invoke-%E6%96%B9%E6%B3%95%E7%9A%84%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">3.3 Method.invoke()方法的源码分析</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -464,15 +512,115 @@
     }
 </style>
 </div>
-            <h1 id="虹影-Blog：代码世界的共享角落"><a href="#虹影-Blog：代码世界的共享角落" class="headerlink" title="虹影 Blog：代码世界的共享角落"></a>虹影 Blog：代码世界的共享角落</h1><h2 id="博客：程序员的真挚心意"><a href="#博客：程序员的真挚心意" class="headerlink" title="博客：程序员的真挚心意"></a>博客：程序员的真挚心意</h2><p>在编程的征途中，我不断探索，有收获也有成长。写这个博客，源于我对编程的热爱，也希望与同行者相互扶持。</p>
-<p>编程时光里，攻克难题、写出精妙代码的时刻，都让我沉醉。我曾把心得记在本子上，如今更想分享出来。愿我整理的技术总结、代码讲解，能为大家提供帮助，让你少些困扰，多些启发。我愿毫无保留地分享经验，在这编程世界，我们本就该携手共进。</p>
-<p>我热爱编程，更期待与志同道合的朋友相聚，一起探讨技术，追逐代码之梦。这就是我写博客的初心，愿与你共赴代码与梦想之约。</p>
-<h3 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a><strong>关于博客</strong></h3><p>到目前为止已经写了<code _class_="article_number"></code>篇文章， 共<code _class_="site_word_count"></code>字。</p>
-<p>本站访问人数：<code _class_="site_uv"></code>人次 ， 访问量：<code _class_="site_pv"></code>次</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、Java反射机制概述"><a href="#一、Java反射机制概述" class="headerlink" title="一、Java反射机制概述"></a>一、Java反射机制概述</h2><h3 id="1-1-反射机制简介"><a href="#1-1-反射机制简介" class="headerlink" title="1.1 反射机制简介"></a>1.1 反射机制简介</h3><p>Java反射机制是Java语言中一个非常强大的特性，它允许程序在运行时动态地访问和修改类的属性、方法、构造函数等信息。通过反射，我们可以在运行时创建对象、调用方法、获取和设置字段值等，极大地提高了程序的灵活性和可扩展性。</p>
+<h3 id="1-2-反射机制的应用场景"><a href="#1-2-反射机制的应用场景" class="headerlink" title="1.2 反射机制的应用场景"></a>1.2 反射机制的应用场景</h3><ul>
+<li><strong>框架设计</strong>：许多Java框架（如Spring、Hibernate等）都大量使用了反射机制，以实现依赖注入、对象关系映射等功能。框架通过反射动态地加载和管理类，使得开发者可以专注于业务逻辑的实现，而不需要关心底层的类加载和对象创建等细节。</li>
+<li><strong>动态代理</strong>：Java的动态代理机制（如JDK动态代理）也是基于反射实现的。通过动态代理，可以在运行时动态地创建代理类和代理对象，从而实现对目标对象的拦截和增强，常用于实现事务管理、日志记录等功能。</li>
+<li><strong>配置文件驱动</strong>：在一些应用中，可以通过配置文件来指定类名和方法名，然后在程序运行时通过反射动态地加载和调用这些类和方法，从而实现灵活的配置和扩展。</li>
+</ul>
+<h2 id="二、Java反射机制的创建模式和常用方法"><a href="#二、Java反射机制的创建模式和常用方法" class="headerlink" title="二、Java反射机制的创建模式和常用方法"></a>二、Java反射机制的创建模式和常用方法</h2><h3 id="2-1-获取Class对象的三种方式"><a href="#2-1-获取Class对象的三种方式" class="headerlink" title="2.1 获取Class对象的三种方式"></a>2.1 获取Class对象的三种方式</h3><p>要使用反射机制，首先需要获取到代表类的Class对象。Java提供了三种获取Class对象的方式：</p>
+<ul>
+<li><strong>通过对象的getClass()方法</strong>：这种方式需要先创建一个类的对象，然后调用对象的getClass()方法来获取Class对象。例如：<pre><code class="java">Student student = new Student();
+Class stuClass = student.getClass();
+</code></pre>
+</li>
+<li><strong>通过类名的.class属性</strong>：这种方式直接通过类名的.class属性来获取Class对象，是获取Class对象最简单的方式之一。例如：<pre><code class="java">Class stuClass = Student.class;
+</code></pre>
+</li>
+<li><strong>通过Class类的forName()方法</strong>：这种方式通过Class类的静态方法forName()来获取Class对象，需要传入类的全限定名作为参数。例如：<pre><code class="java">Class stuClass = Class.forName(&quot;fanshe.Student&quot;);
+</code></pre>
+这种方式是最为常见和灵活的，因为它可以在运行时动态地加载指定的类。</li>
+</ul>
+<h3 id="2-2-获取类的构造器"><a href="#2-2-获取类的构造器" class="headerlink" title="2.2 获取类的构造器"></a>2.2 获取类的构造器</h3><p>通过Class对象，我们可以获取到类的构造器，从而在运行时创建类的对象。获取构造器的方法主要有以下几种：</p>
+<ul>
+<li>**getDeclaredConstructors()**：返回类中所有构造器的数组，包括私有的构造器。<pre><code class="java">Constructor[] constructors = stuClass.getDeclaredConstructors();
+</code></pre>
+</li>
+<li>**getConstructors()**：返回类中所有公共构造器的数组。<pre><code class="java">Constructor[] constructors = stuClass.getConstructors();
+</code></pre>
+</li>
+<li>**getConstructor(Class&lt;?&gt;… parameterTypes)**：返回类中指定参数类型的公共构造器。<pre><code class="java">Constructor constructor = stuClass.getConstructor(String.class);
+</code></pre>
+</li>
+<li>**getDeclaredConstructor(Class&lt;?&gt;… parameterTypes)**：返回类中指定参数类型的构造器，包括私有的构造器。<pre><code class="java">Constructor constructor = stuClass.getDeclaredConstructor(String.class);
+</code></pre>
+获取到构造器后，可以通过调用构造器的newInstance()方法来创建类的对象。例如：<pre><code class="java">Student student = (Student) constructor.newInstance(&quot;张三&quot;);
+</code></pre>
+</li>
+</ul>
+<h3 id="2-3-获取类的成员变量"><a href="#2-3-获取类的成员变量" class="headerlink" title="2.3 获取类的成员变量"></a>2.3 获取类的成员变量</h3><p>通过Class对象，我们还可以获取到类的成员变量，并对其进行操作。获取成员变量的方法主要有以下几种：</p>
+<ul>
+<li>**getFields()**：返回类中所有公共成员变量的数组。<pre><code class="java">Field[] fields = stuClass.getFields();
+</code></pre>
+</li>
+<li>**getDeclaredFields()**：返回类中所有成员变量的数组，包括私有的成员变量。<pre><code class="java">Field[] fields = stuClass.getDeclaredFields();
+</code></pre>
+</li>
+<li>**getField(String name)**：返回类中指定名称的公共成员变量。<pre><code class="java">Field field = stuClass.getField(&quot;name&quot;);
+</code></pre>
+</li>
+<li>**getDeclaredField(String name)**：返回类中指定名称的成员变量，包括私有的成员变量。<pre><code class="java">Field field = stuClass.getDeclaredField(&quot;age&quot;);
+</code></pre>
+获取到成员变量后，可以通过调用成员变量的get()和set()方法来获取和设置成员变量的值。例如：<pre><code class="java">Object value = field.get(student);
+field.set(student, &quot;李四&quot;);
+</code></pre>
+</li>
+</ul>
+<h3 id="2-4-获取类的方法"><a href="#2-4-获取类的方法" class="headerlink" title="2.4 获取类的方法"></a>2.4 获取类的方法</h3><p>通过Class对象，我们可以获取到类的方法，并在运行时调用这些方法。获取方法的方法主要有以下几种：</p>
+<ul>
+<li>**getMethods()**：返回类中所有公共方法的数组，包括继承自父类的方法。<pre><code class="java">Method[] methods = stuClass.getMethods();
+</code></pre>
+</li>
+<li>**getDeclaredMethods()**：返回类中所有方法的数组，包括私有的方法。<pre><code class="java">Method[] methods = stuClass.getDeclaredMethods();
+</code></pre>
+</li>
+<li>**getMethod(String name, Class&lt;?&gt;… parameterTypes)**：返回类中指定名称和参数类型的公共方法。<pre><code class="java">Method method = stuClass.getMethod(&quot;study&quot;, String.class);
+</code></pre>
+</li>
+<li>**getDeclaredMethod(String name, Class&lt;?&gt;… parameterTypes)**：返回类中指定名称和参数类型的方法，包括私有的方法。<pre><code class="java">Method method = stuClass.getDeclaredMethod(&quot;eat&quot;, String.class);
+</code></pre>
+获取到方法后，可以通过调用方法的invoke()方法来执行该方法。例如：<pre><code class="java">method.invoke(student, &quot;Java&quot;);
+</code></pre>
+</li>
+</ul>
+<h2 id="三、Java反射机制的源码分析"><a href="#三、Java反射机制的源码分析" class="headerlink" title="三、Java反射机制的源码分析"></a>三、Java反射机制的源码分析</h2><h3 id="3-1-Class-forName-方法的源码分析"><a href="#3-1-Class-forName-方法的源码分析" class="headerlink" title="3.1 Class.forName()方法的源码分析"></a>3.1 Class.forName()方法的源码分析</h3><p>Class.forName()方法是获取Class对象最常用的方式之一，其源码实现主要分为以下几个步骤：</p>
+<ul>
+<li><strong>获取调用者的类加载器</strong>：通过Reflection.getCallerClass()方法获取调用者的类信息，从而获取当前的类加载器。</li>
+<li><strong>调用native方法获取类信息</strong>：调用forName0()方法，该方法是一个native方法，由JVM实现，用于获取类的字节码信息。</li>
+<li><strong>加载类</strong>：通过调用ClassLoader的loadClass()方法来加载类。loadClass()方法会先检查类是否已经被加载，如果已经被加载，则直接返回；否则，会调用findClass()方法来查找并加载类。</li>
+</ul>
+<h3 id="3-2-Constructor-newInstance-方法的源码分析"><a href="#3-2-Constructor-newInstance-方法的源码分析" class="headerlink" title="3.2 Constructor.newInstance()方法的源码分析"></a>3.2 Constructor.newInstance()方法的源码分析</h3><p>Constructor.newInstance()方法用于通过构造器创建类的对象，其源码实现主要分为以下几个步骤：</p>
+<ul>
+<li><strong>权限检测</strong>：检查是否有权限调用该构造器，如果没有权限，则抛出异常。</li>
+<li><strong>查找无参构造器</strong>：通过getConstructor0()方法查找类的无参构造器，并将其缓存起来。</li>
+<li><strong>调用无参构造器</strong>：通过调用ConstructorAccessor的newInstance()方法来调用无参构造器，从而创建类的对象。</li>
+</ul>
+<h3 id="3-3-Method-invoke-方法的源码分析"><a href="#3-3-Method-invoke-方法的源码分析" class="headerlink" title="3.3 Method.invoke()方法的源码分析"></a>3.3 Method.invoke()方法的源码分析</h3><p>Method.invoke()方法用于调用类的方法，其源码实现主要分为以下几个步骤：</p>
+<ul>
+<li><strong>权限检测</strong>：检查是否有权限调用该方法，如果没有权限，则抛出异常。</li>
+<li><strong>获取MethodAccessor</strong>：通过acquireMethodAccessor()方法获取MethodAccessor对象，该对象用于执行方法调用。</li>
+<li><strong>执行方法调用</strong>：通过MethodAccessor的invoke()方法来执行方法调用。在第一次调用时，会生成一个代理Accessor来执行方法调用，后续调用则直接使用生成的Accessor。</li>
+</ul>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -481,11 +629,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
