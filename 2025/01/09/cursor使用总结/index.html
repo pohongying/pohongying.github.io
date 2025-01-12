@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>git 的用法和配置 | Hexo</title>
-  <meta name="keywords" content=" git ">
-  <meta name="description" content="git 的用法和配置 | Hexo">
+  <title>cursor使用总结 | Hexo</title>
+  <meta name="keywords" content=" AI , cursor ">
+  <meta name="description" content="cursor使用总结 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -483,9 +483,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-git用法和配置" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-cursor使用总结" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">git 的用法和配置</h1>
+        <h1 class="article-title">cursor使用总结</h1>
     
     <div class="article-meta">
         
@@ -503,19 +503,21 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">git</a>
+            <a class="color3">AI</a>
+            
+            <a class="color2">cursor</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2024-12-29 16:36:05'>2024-12-29 16:16</time>
+            发布时间 : <time class="date" title='最后更新: 2025-01-12 14:20:19'>2025-01-09 11:10</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:982</span>
+        <span>字数:1.1k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -534,7 +536,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-%E7%9A%84%E7%94%A8%E6%B3%95%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="toc-text">git 的用法和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81git-%E7%9A%84%E7%94%A8%E6%B3%95"><span class="toc-text">一、git 的用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-git-branch-%E7%9A%84%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95"><span class="toc-text">1. git branch 的常见用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-git-pull-%E6%84%9F%E6%82%9F"><span class="toc-text">2. git pull 感悟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-git-push"><span class="toc-text">3. git push</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-git-remote"><span class="toc-text">4. git remote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-git-merge"><span class="toc-text">5. git merge</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81git-%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-text">二、git 的配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%BF%9E%E6%8E%A5-gitte-%E5%92%8C-github"><span class="toc-text">1.连接 gitte 和 github</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8Cursor"><span class="toc-text">为什么使用Cursor?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cursor-%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-text">Cursor 的优势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E7%90%86%E8%A7%A3%E4%BB%A3%E7%A0%81%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-text">深度理解代码上下文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%88%B0%E4%BB%A3%E7%A0%81%E8%BD%AC%E6%8D%A2"><span class="toc-text">自然语言到代码转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="toc-text">实时代码分析与优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VSCode-%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">VSCode 生态系统兼容性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cursor-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7"><span class="toc-text">Cursor 使用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-CursorRules-%E6%96%87%E4%BB%B6%E6%98%8E%E7%A1%AE%E6%8C%87%E4%BB%A4"><span class="toc-text">利用 CursorRules 文件明确指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A7%E7%94%A8-Composer-%E4%B8%8E-Git-%E4%BF%9D%E9%9A%9C%E4%BB%A3%E7%A0%81%E5%AE%89%E5%85%A8"><span class="toc-text">巧用 Composer 与 Git 保障代码安全</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E7%A0%B4%E9%99%90%E5%88%B6%EF%BC%8C%E7%95%85%E4%BA%AB%E6%97%A0%E9%99%90-Cursor-%E4%BD%93%E9%AA%8C%EF%BC%81"><span class="toc-text">打破限制，畅享无限 Cursor 体验！</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E9%94%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">一键解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%B7%E5%A4%96%E7%94%A8%E6%88%B7"><span class="toc-text">海外用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BD%E5%86%85%E7%94%A8%E6%88%B7%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="toc-text">国内用户（推荐）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-text">手动安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82"><span class="toc-text">技术细节</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -550,65 +552,67 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="git-的用法和配置"><a href="#git-的用法和配置" class="headerlink" title="git 的用法和配置"></a>git 的用法和配置</h2><h2 id="一、git-的用法"><a href="#一、git-的用法" class="headerlink" title="一、git 的用法"></a>一、git 的用法</h2><blockquote>
-<p>感悟：远程仓库并不能合并分支，需要<code>git fetch</code>拉取到本地仓库，然后在本地使用<code>git switch</code>或者<code>git checkout</code> ，转换分支，然后在本地进行分支的合并。</p>
-<p>&#x3D;&#x3D;故因此，通常需要把分支在本地合并，然后在 push 到远程仓库&#x3D;&#x3D;</p>
-</blockquote>
-<h3 id="1-git-branch-的常见用法"><a href="#1-git-branch-的常见用法" class="headerlink" title="1. git branch 的常见用法"></a>1. git branch 的常见用法</h3><ul>
-<li>git branch -v ——查看本地分支的信息</li>
-<li>git branch -vv ——查看更详细，包含了本地分支与远程分支之间的跟踪关系信息</li>
-<li>git branch -r ——查看远程分支</li>
-<li>git brach -a ——查看所有的分支</li>
+        <h1 id="为什么使用Cursor"><a href="#为什么使用Cursor" class="headerlink" title="为什么使用Cursor?"></a>为什么使用Cursor?</h1><p>随着 AI 技术的飞速发展，众多 AI 编程工具层出不穷，像 ChatGPT 以及国产的通义、豆包、Kimi 等，它们以对话形式为程序员带来诸多便利，支持多模态输入，在写代码、查资料、找 bug 等方面节省了大量时间。</p>
+<p>然而，这些工具在实际使用中存在不便之处，比如需要频繁切换界面，且对本地项目代码的处理能力有限，往往只能通过复制粘贴来应对。</p>
+<p>而 Cursor 的出现，给程序员带来了全新体验。它不仅继承了 VS Code 的强大功能，还全面融入了 AI 技术，极大地简化了开发工作流，让编程变得更加便捷高效。Cursor 能够深入分析项目代码，直接在本地进行修改，还能借助 Composer 自动调整相关文件代码。经过使用，我发现它优点颇多，但也有不足。它主要解决了从 0 到 1 的问题，只需提供需求文档，就能快速生成代码，并给出环境配置提示，多数情况很准确，偶尔出现小问题排查一下即可。总体来说，Cursor 极大地提升了编程的便捷性。</p>
+<h2 id="Cursor-的优势"><a href="#Cursor-的优势" class="headerlink" title="Cursor 的优势"></a>Cursor 的优势</h2><h3 id="深度理解代码上下文"><a href="#深度理解代码上下文" class="headerlink" title="深度理解代码上下文"></a>深度理解代码上下文</h3><p>Cursor 对代码意图的理解能力非常出色。例如，在一个大型项目中修改日志输出格式时，Cursor 能够准确理解代码的上下文，生成更加相关和准确的代码片段。</p>
+<h3 id="自然语言到代码转换"><a href="#自然语言到代码转换" class="headerlink" title="自然语言到代码转换"></a>自然语言到代码转换</h3><p>Cursor 支持使用自然语言描述功能需求，然后自动生成相应的代码。这一功能特别适合快速原型开发或处理不熟悉的 API。</p>
+<h3 id="实时代码分析与优化"><a href="#实时代码分析与优化" class="headerlink" title="实时代码分析与优化"></a>实时代码分析与优化</h3><p>Cursor 能够实时分析代码质量，提供 AI 驱动的优化建议。这不仅包括语法错误检测，还涵盖了性能优化、设计模式应用等高级建议。</p>
+<h3 id="VSCode-生态系统兼容性"><a href="#VSCode-生态系统兼容性" class="headerlink" title="VSCode 生态系统兼容性"></a>VSCode 生态系统兼容性</h3><p>Cursor 保持了与大多数 VSCode 插件的兼容性，同时提供额外的 AI 功能。这意味着你可以在熟悉的开发环境中享受 AI 带来的增强体验。</p>
+<h2 id="Cursor-使用技巧"><a href="#Cursor-使用技巧" class="headerlink" title="Cursor 使用技巧"></a>Cursor 使用技巧</h2><h3 id="利用-CursorRules-文件明确指令"><a href="#利用-CursorRules-文件明确指令" class="headerlink" title="利用 CursorRules 文件明确指令"></a>利用 CursorRules 文件明确指令</h3><p>创建 CursorRules 文件，详细规定 Cursor 的操作规则，如定位前端或后端代码、修改方式、是否添加注释等，让 Cursor 更精准地执行任务。</p>
+<h3 id="巧用-Composer-与-Git-保障代码安全"><a href="#巧用-Composer-与-Git-保障代码安全" class="headerlink" title="巧用 Composer 与 Git 保障代码安全"></a>巧用 Composer 与 Git 保障代码安全</h3><p>多使用 Composer 进行代码修改，若对话中出现错误修改，可借助 Git 回滚，或重新编辑后自动撤销，确保代码的准确性和完整性。</p>
+<h2 id="打破限制，畅享无限-Cursor-体验！"><a href="#打破限制，畅享无限-Cursor-体验！" class="headerlink" title="打破限制，畅享无限 Cursor 体验！"></a>打破限制，畅享无限 Cursor 体验！</h2><p>Cursor 对免费账号的使用次数有所限制，通常一台电脑只能使用两次免费账号。它会记录电脑的唯一标识 ID，即便通过邮箱别名创建无限账号，若电脑 ID 未变，系统也会检测到。因此，关键在于如何修改电脑 ID 以突破这一限制。</p>
+<h3 id="一键解决方案"><a href="#一键解决方案" class="headerlink" title="一键解决方案"></a>一键解决方案</h3><h4 id="海外用户"><a href="#海外用户" class="headerlink" title="海外用户"></a>海外用户</h4><ul>
+<li><strong>Linux&#x2F;macOS</strong></li>
 </ul>
-<h3 id="2-git-pull-感悟"><a href="#2-git-pull-感悟" class="headerlink" title="2. git pull 感悟"></a>2. git pull 感悟</h3><ul>
-<li>git pull 功能：从远程仓库拉取分支并合并到当前的分支下，包括两部分：git fetch 和 git merge。故其功能比 merge 要强</li>
-<li>git pull 主要是本地仓库和远程仓库保持同步，获取最新的代码，以便与能够 git push</li>
-<li><code>git pull origin &lt;远程分支名&gt;:&lt;本地分支名&gt;</code></li>
-</ul>
-<h3 id="3-git-push"><a href="#3-git-push" class="headerlink" title="3. git push"></a>3. git push</h3><ul>
-<li>git push 主要用于把本地仓库的代码，提交到远程仓库中，<code>git push origin &lt;本地分支名&gt;:&lt;远程分支名&gt;</code></li>
-<li>有两种情况： 1. 如果远程仓库中有本地的 master 分支，且是同步的（意思就是本地仓库的作用域要大于远程仓库），那么则会被添加到远程仓库的 master 分支下（举例是 master）。如果是没有同步，也可以添加<code> --force</code>来使用，强制 push，但是会造成很多后果。 2. 如果远程仓库中没有本地的 dev 分支，则会在远程仓库中新建一个 dev 分支(举例)</li>
-<li>git push 到远程仓库的分支，这样表示：orgin&#x2F;master、origin&#x2F;dev</li>
-</ul>
-<h3 id="4-git-remote"><a href="#4-git-remote" class="headerlink" title="4. git remote"></a>4. git remote</h3><ul>
-<li>git remote -v 可以查看本地仓库连接了几个远程仓库</li>
-<li><code>git remote add &lt;remote_name&gt; &lt;remote_url&gt; </code> , remote_url 可以是 ssh，也可以是 https</li>
-</ul>
-<h3 id="5-git-merge"><a href="#5-git-merge" class="headerlink" title="5. git merge"></a>5. git merge</h3><ul>
-<li>git merge <branch> 可以把 branch 分支合并到当前分支上</li>
-</ul>
-<h2 id="二、git-的配置"><a href="#二、git-的配置" class="headerlink" title="二、git 的配置"></a>二、git 的配置</h2><h3 id="1-连接-gitte-和-github"><a href="#1-连接-gitte-和-github" class="headerlink" title="1.连接 gitte 和 github"></a>1.连接 gitte 和 github</h3><ul>
-<li><p><code>ssh-keygen -t rsa -f ~/.ssh/id_rsa.github -C &quot;pohongying520@qq.com</code> 添加密钥。</p>
-</li>
-<li><p><code>ssh-add -K ~/.ssh/id_rsa_github</code> 将密钥信息存储到 keychain 中，永久保存；如果使用<code>ssh-add  ~/.ssh/id_rsa_github</code> 只会将信息存储至 session 中，关机重启后自动清除，这时候连接<code>ssh-T git@github.com</code> 则会报<code>Permission denied</code> 的错误。</p>
-</li>
-<li><p>如果存有多个账户的密钥，则要创建 config 文件：</p>
-<pre><code># Default gitHub user Self
-Host github
-    HostName ssh.github.com
-    User git
-    IdentityFile ~/.ssh/id_rsa_github
-
-
-# gitee
-Host gitee
-    HostName gitee.com
-    User git
-    Port 22
-    IdentityFile ~/.ssh/id_rsa_gitee
+<pre><code class="bash">curl -fsSL https://raw.githubusercontent.com/yuaotian/go-cursor-help/master/scripts/install.sh | sudo bash
 </code></pre>
+<ul>
+<li><strong>Windows</strong></li>
+</ul>
+<pre><code class="powershell">irm https://raw.githubusercontent.com/yuaotian/go-cursor-help/master/scripts/install.ps1 | iex
+</code></pre>
+<h4 id="国内用户（推荐）"><a href="#国内用户（推荐）" class="headerlink" title="国内用户（推荐）"></a>国内用户（推荐）</h4><ul>
+<li><strong>macOS</strong></li>
+</ul>
+<pre><code class="bash">curl -fsSL https://aizaozao.com/accelerate.php/https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_mac_id_modifier.sh | sudo bash
+</code></pre>
+<ul>
+<li><strong>Linux</strong></li>
+</ul>
+<pre><code class="bash">curl -fsSL https://aizaozao.com/accelerate.php/https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_linux_id_modifier.sh | sudo bash
+</code></pre>
+<ul>
+<li><strong>Windows</strong></li>
+</ul>
+<pre><code class="powershell">irm https://aizaozao.com/accelerate.php/https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_win_id_modifier.ps1 | iex
+</code></pre>
+<h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><p>从 releases 下载适合您系统的文件：</p>
+<ul>
+<li><strong>Windows 安装包</strong><ul>
+<li>64 位: cursor-id-modifier_windows_x64.exe</li>
+<li>32 位: cursor-id-modifier_windows_x86.exe</li>
+</ul>
 </li>
-<li><p>有时候连不上，可能是因为域名污染的问题，无法通过域名解析得到正确的 ip 地址，这时候我们往往需要更改 host 文件<code>sudo vi /etc/hosts</code> , 把 github 相关的域名和对应的 IP 绑定，最后刷新 dns 缓存<code>sudo killall -HUP mDNSResponder</code>。</p>
+<li><strong>macOS 安装包</strong><ul>
+<li>Intel: cursor-id-modifier_darwin_x64_intel</li>
+<li>M1&#x2F;M2: cursor-id-modifier_darwin_arm64_apple_silicon</li>
+</ul>
 </li>
-<li><p>idea 配置 github，没有项目可以 share ……project，有项目 git push。使用 gitee 要安装插件</p>
+<li><strong>Linux 安装包</strong><ul>
+<li>64 位: cursor-id-modifier_linux_x64</li>
+<li>32 位: cursor-id-modifier_linux_x86</li>
+<li>ARM64: cursor-id-modifier_linux_arm64</li>
+</ul>
 </li>
 </ul>
-<ol start="2">
-<li>git 命令行，邮箱无实际含义，只用来做标识。</li>
-<li>服了，ssh 连接太多，导致登录不上了。github 需要 git 设置代理，gitee 需要关掉代理，我弄了一下午，差点没把我整疯，也好，希望给以后长点教训。ssh -T git@ 用来测试 ssh 连接，ssh -V git@ 用来 debug，@后面通常是 ssh 地址，也可以是 htpps 地址，不过要输入密码，如果 ssh 设置密匙有问题的话，可以考虑这个 https。</li>
-<li>git remote add [自定义远程项目名] [项目地址 可以 ssh 和 https]，git push [远程项目名] [当前分支名称]：[远程分支]</li>
-</ol>
-<p>看来以后暂时只能提交到 gitee 上了，github 用来 git clone 吧，不过 git remote add +https 网络好兴许可以提交，目前就是 GitHub 的 ssh 有点问题，具体原因不清楚，也就是多输输密码的事，反正我也还记得。(1.25 睡觉)</p>
+<h2 id="技术细节"><a href="#技术细节" class="headerlink" title="技术细节"></a>技术细节</h2><p>该工具通过修改 Cursor 的 storage.json 配置文件来实现功能，文件位置如下：</p>
+<ul>
+<li><strong>Windows</strong>: %APPDATA%\Cursor\User\globalStorage\</li>
+<li><strong>macOS</strong>: ~&#x2F;Library&#x2F;Application Support&#x2F;Cursor&#x2F;User&#x2F;globalStorage&#x2F;</li>
+<li><strong>Linux</strong>: ~&#x2F;.config&#x2F;Cursor&#x2F;User&#x2F;globalStorage&#x2F;</li>
+</ul>
+<p>工具会生成新的唯一标识符，包括 telemetry.machineId、telemetry.macMachineId、telemetry.devDeviceId 和 telemetry.sqmId，以确保安全性和稳定性。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
