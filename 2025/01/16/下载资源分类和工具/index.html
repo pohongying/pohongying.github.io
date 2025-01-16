@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>反转二叉树的奇数层 | Hexo</title>
-  <meta name="keywords" content=" dfs ">
-  <meta name="description" content="反转二叉树的奇数层 | Hexo">
+  <title>Hexo</title>
+  <meta name="keywords" content=" 下载 ">
+  <meta name="description" content="Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -481,9 +481,7 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-反转二叉树的奇数层" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">反转二叉树的奇数层</h1>
+        <article id="post-下载资源分类和工具" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
@@ -493,9 +491,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="算法">算法</a> > 
-            
-            <a  data-rel="算法&lt;---&gt;二叉树">二叉树</a>
+            <a  data-rel="工具">工具</a>
             
         </span>
         
@@ -503,19 +499,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">dfs</a>
+            <a class="color3">下载</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2025-01-16 09:38:02'>2025-01-01 23:55</time>
+            发布时间 : <time class="date" title='最后更新: 2025-01-16 09:45:21'>2025-01-16 00:00</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:358</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -534,7 +530,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2415-%E5%8F%8D%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%A5%87%E6%95%B0%E5%B1%82"><span class="toc-text">2415 .反转二叉树的奇数层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9Adfs"><span class="toc-text">方法一：dfs</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9Abfs"><span class="toc-text">方法二：bfs</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="toc-text">思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="toc-text">代码实现</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text"></span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -550,74 +546,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="2415-反转二叉树的奇数层"><a href="#2415-反转二叉树的奇数层" class="headerlink" title="2415 .反转二叉树的奇数层"></a>2415 .反转二叉树的奇数层</h2><h3 id="方法一：dfs"><a href="#方法一：dfs" class="headerlink" title="方法一：dfs"></a>方法一：dfs</h3><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>这道题很有意思，之前没说反转的奇数层，因此可以后序遍历，可以实现交换两个节点。而这道题要注意的点事，它只能前序遍历，因此它只能交换节点的值，并且要实现奇偶装换，这里很巧妙，它用了<strong>！</strong> 来实现，还有就是它比较的是左右两个子树，而不是同一个子树</p>
-<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><pre><code>class Solution &#123;
-    boolean flag = true;
-
-    public TreeNode reverseOddLevels(TreeNode root) &#123;
-        travel(root.left,root.right, flag);
-        return root;
-
-    &#125;
-
-    public void travel(TreeNode left,TreeNode right, boolean flag) &#123;
-        if (left == null) &#123;
-            return ;
-        &#125;
-        if (flag) &#123;
-            int val = left.val;
-            left.val = right.val;
-            right.val = val;
-        &#125;
-        travel(left.left,right.right,!flag);
-        travel(left.right,right.left, !flag);
-
-    &#125;
-
-&#125;
-</code></pre>
-<h3 id="方法二：bfs"><a href="#方法二：bfs" class="headerlink" title="方法二：bfs"></a>方法二：bfs</h3><h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>同样是，奇偶互换，设置一个flag</p>
-<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><pre><code>class Solution &#123;
-    public TreeNode reverseOddLevels(TreeNode root) &#123;
-        Deque&lt;TreeNode&gt; queue = new LinkedList&lt;&gt;();
-        queue.offer(root);
-        boolean flag = false; // 作为标识很重要
-        if (root == null) &#123;
-            return root;
-        &#125;
-
-        while (!queue.isEmpty()) &#123;
-            int size = queue.size();
-            List&lt;TreeNode&gt; arr = new ArrayList&lt;TreeNode&gt;();
-            for (int i = 0; i &lt; size; i++) &#123;
-                TreeNode node = queue.poll();
-                if (flag) &#123;
-                    arr.add(node);
-                &#125;
-                if (node.left != null) &#123;
-                    queue.offer(node.left);
-                    queue.offer(node.right);
-
-                &#125;
-
-            &#125;
-            if (flag) &#123;
-                for (int l = 0, r = size - 1; l &lt; r; l++, r--) &#123;
-                    int temp = arr.get(l).val;
-                    arr.get(l).val = arr.get(r).val;
-                    arr.get(r).val = temp;
-                &#125;
-            &#125;
-
-            flag = !flag; // 每到下一层，进行反转
-
-        &#125;
-        return root;
-
-    &#125;
-&#125;
-</code></pre>
-
+        <h1 id=""><a href="#" class="headerlink" title=""></a></h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
     </div>
