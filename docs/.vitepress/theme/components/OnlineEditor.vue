@@ -19,9 +19,9 @@ const slug = ref(`new-post-${today}`)
 const tags = ref('写作系统, 技术笔记')
 const summary = ref('一句话说明这篇文章要解决的问题。')
 
-const githubBaseUrl = computed(() => __GITHUB_BASE_URL__ || 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME.github.io')
-const branch = computed(() => __GITHUB_BRANCH__ || 'main')
-const repositoryLabel = computed(() => __GITHUB_REPOSITORY__ || 'YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME.github.io')
+const githubBaseUrl = computed(() => __GITHUB_BASE_URL__ || 'https://github.com/pohongying/pohongying.github.io')
+const branch = computed(() => __GITHUB_BRANCH__ || 'vitepress-blog')
+const repositoryLabel = computed(() => __GITHUB_REPOSITORY__ || 'pohongying/pohongying.github.io')
 
 const fileName = computed(() => {
   const normalized = slug.value

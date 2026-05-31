@@ -1,10 +1,10 @@
 import { defineConfig } from 'vitepress'
 
 const repository = process.env.VITEPRESS_GITHUB_REPOSITORY || process.env.GITHUB_REPOSITORY || ''
-const branch = process.env.VITEPRESS_GITHUB_BRANCH || process.env.GITHUB_REF_NAME || 'main'
+const branch = process.env.VITEPRESS_GITHUB_BRANCH || process.env.GITHUB_REF_NAME || 'vitepress-blog'
 const githubBaseUrl = repository
   ? `https://github.com/${repository}`
-  : 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME.github.io'
+  : 'https://github.com/pohongying/pohongying.github.io'
 
 export default defineConfig({
   title: '罗一的技术笔记',
@@ -55,7 +55,7 @@ export default defineConfig({
       ]
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/' }
+      { icon: 'github', link: 'https://github.com/pohongying/pohongying.github.io' }
     ],
     outline: {
       label: '本页目录',

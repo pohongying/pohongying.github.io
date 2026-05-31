@@ -43,5 +43,5 @@ summary: 一句话摘要。
 本地运行时如果还没有 GitHub remote，可以临时指定仓库名：
 
 ```bash
-VITEPRESS_GITHUB_REPOSITORY=<username>/<username>.github.io npm run dev
+VITEPRESS_GITHUB_REPOSITORY=pohongying/pohongying.github.io VITEPRESS_GITHUB_BRANCH=vitepress-blog npm run dev
 ```

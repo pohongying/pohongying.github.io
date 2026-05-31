@@ -12,7 +12,7 @@ npm run dev
 如果需要在本地预览 GitHub 在线编辑链接，可以指定目标仓库：
 
 ```bash
-VITEPRESS_GITHUB_REPOSITORY=<username>/<username>.github.io npm run dev
+VITEPRESS_GITHUB_REPOSITORY=pohongying/pohongying.github.io VITEPRESS_GITHUB_BRANCH=vitepress-blog npm run dev
 ```
 
 ## 常用命令
@@ -32,7 +32,7 @@ npm run preview
 
 ## 发布
 
-将仓库发布为 `<username>.github.io` 后，推送到 `main` 分支即可通过 GitHub Actions 自动构建并发布到 GitHub Pages。
+将仓库推送到 `pohongying/pohongying.github.io` 的 `vitepress-blog` 分支后，GitHub Actions 会自动构建并发布到 GitHub Pages。旧的 `gh-pages` 分支可以保留作为原博客备份。
 
 ## 在线编辑
 

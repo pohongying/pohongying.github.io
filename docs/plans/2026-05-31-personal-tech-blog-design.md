@@ -12,14 +12,14 @@
 - 技术栈：VitePress。
 - 内容组织：按主题分类。
 - 作品集：独立 Projects 页面，首页展示少量精选项目。
-- 发布方式：`<username>.github.io` 个人主页仓库。
+- 发布方式：`pohongying.github.io` 个人主页仓库，新博客源码使用 `vitepress-blog` 分支，旧 `gh-pages` 分支保留作为原博客备份。
 - 视觉方向：个人品牌感更强，首页突出个人定位和技术方向。
 - 首版功能：本地搜索、分类/标签、深浅色模式。
 - 语言：中文为主。
 
 ## 架构
 
-仓库本身就是内容源。所有文章、项目介绍、关于页面和演进文档都以 Markdown 保存。VitePress 读取 `docs/` 目录生成静态站点，GitHub Actions 在 `main` 分支变更后执行构建，并将产物发布到 GitHub Pages。
+仓库本身就是内容源。所有文章、项目介绍、关于页面和演进文档都以 Markdown 保存。VitePress 读取 `docs/` 目录生成静态站点，GitHub Actions 在 `vitepress-blog` 分支变更后执行构建，并将产物发布到 GitHub Pages。
 
 首版不引入数据库、CMS、评论系统或统计服务。这样可以降低维护成本，同时保持长期备份和迁移能力。后续如果需要评论，可接入 Giscus；如果需要访问统计，可接入 Plausible、Umami 或其他轻量方案。
 
