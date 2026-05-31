@@ -2,6 +2,11 @@
 
 这里按主题整理技术文章。每篇文章都使用 Markdown 保存，可以直接在 GitHub 网页中编辑。
 
+<div class="topic-list">
+  <a href="/authoring">新建文章</a>
+  <a href="/authoring#写作指南">写作指南</a>
+</div>
+
 ## Engineering
 
 - [如何搭建一个长期可维护的技术博客](./posts/engineering/building-a-durable-tech-blog.md)

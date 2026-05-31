@@ -9,6 +9,12 @@ npm install
 npm run dev
 ```
 
+如果需要在本地预览 GitHub 在线编辑链接，可以指定目标仓库：
+
+```bash
+VITEPRESS_GITHUB_REPOSITORY=<username>/<username>.github.io npm run dev
+```
+
 ## 常用命令
 
 ```bash
@@ -27,3 +33,9 @@ npm run preview
 ## 发布
 
 将仓库发布为 `<username>.github.io` 后，推送到 `main` 分支即可通过 GitHub Actions 自动构建并发布到 GitHub Pages。
+
+## 在线编辑
+
+- 每个页面底部都有“在 GitHub 编辑此页”入口。
+- `docs/authoring.md` 提供新建文章表单，会生成带 frontmatter 的 GitHub 新文件链接。
+- 新文章提交后，记得同步更新 `docs/notes.md` 和对应主题目录的 `index.md`。

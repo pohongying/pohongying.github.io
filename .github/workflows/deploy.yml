@@ -1,5 +1,9 @@
 name: Deploy VitePress site to Pages
 
+env:
+  VITEPRESS_GITHUB_REPOSITORY: ${{ github.repository }}
+  VITEPRESS_GITHUB_BRANCH: ${{ github.ref_name }}
+
 on:
   push:
     branches: [main]

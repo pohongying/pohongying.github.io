@@ -1,5 +1,11 @@
 import { defineConfig } from 'vitepress'
 
+const repository = process.env.VITEPRESS_GITHUB_REPOSITORY || process.env.GITHUB_REPOSITORY || ''
+const branch = process.env.VITEPRESS_GITHUB_BRANCH || process.env.GITHUB_REF_NAME || 'main'
+const githubBaseUrl = repository
+  ? `https://github.com/${repository}`
+  : 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME.github.io'
+
 export default defineConfig({
   title: '罗一的技术笔记',
   description: '工程实践、系统设计与 AI 工具化',
@@ -13,6 +19,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '文章', link: '/notes' },
       { text: '项目', link: '/projects/' },
+      { text: '写作', link: '/authoring' },
       { text: '关于', link: '/about' }
     ],
     sidebar: {
@@ -58,6 +65,10 @@ export default defineConfig({
       prev: '上一篇',
       next: '下一篇'
     },
+    editLink: {
+      pattern: `${githubBaseUrl}/edit/${branch}/docs/:path`,
+      text: '在 GitHub 编辑此页'
+    },
     lastUpdated: {
       text: '最后更新',
       formatOptions: {
@@ -94,5 +105,12 @@ export default defineConfig({
   head: [
     ['meta', { name: 'theme-color', content: '#2f6f73' }],
     ['link', { rel: 'icon', href: '/logo.svg' }]
-  ]
+  ],
+  vite: {
+    define: {
+      __GITHUB_REPOSITORY__: JSON.stringify(repository),
+      __GITHUB_BRANCH__: JSON.stringify(branch),
+      __GITHUB_BASE_URL__: JSON.stringify(githubBaseUrl)
+    }
+  }
 })
