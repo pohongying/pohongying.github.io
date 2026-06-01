@@ -4,7 +4,7 @@ date: 2024-06-06
 updated: '2024-06-06 05:43:56'
 category: 'vibecoding'
 tags:
-  - 'Vibecoding'
+  - 'AI 应用开发'
   - 'AI'
   - '基本概念'
 lastUpdated: false

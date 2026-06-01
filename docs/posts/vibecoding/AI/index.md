@@ -4,10 +4,10 @@ date: 2024-09-01
 updated: '2024-09-01 09:10:00'
 category: 'vibecoding'
 tags:
-  - 'Vibecoding'
+  - 'AI 应用开发'
   - 'AI'
 lastUpdated: false
-summary: 'Vibecoding 专题下的 AI 基础概念与框架索引。'
+summary: 'AI 应用开发专题下的 AI 基础概念与框架索引。'
 ---
 
 # AI 学习地图

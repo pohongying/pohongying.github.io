@@ -1,10 +1,10 @@
-# 文章
+# 内容索引
 
-这里是破虹影的技术文章入口。目前分成两条主线：「后端修仙之路」放传统后端，「Vibecoding」放 AI 学习、AI 编程和智能体相关内容。
+这里是破虹影的技术内容入口。目前分成两条主线：「后端修仙之路」放传统后端，「AI 应用开发」放 AI 学习、AI 编程和智能体相关内容。
 
 <div class="topic-list topic-list--featured">
   <a href="/posts/backend/road-to-backend/">后端修仙之路</a>
-  <a href="/posts/vibecoding/">Vibecoding</a>
+  <a href="/posts/vibecoding/">AI 应用开发</a>
   <a href="/posts/backend/road-to-backend/Java/JavaWeb/">Java Web</a>
   <a href="/posts/backend/road-to-backend/数据库/MySQL/">MySQL</a>
   <a href="/posts/backend/road-to-backend/数据库/Redis/">Redis</a>
@@ -22,9 +22,9 @@
 - [BFS 算法](./posts/backend/road-to-backend/算法/数据结构/图算法/BFS算法.md)
 - [秋招面经](./posts/backend/road-to-backend/秋招/面经/秋招面经.md)
 
-## Vibecoding
+## AI 应用开发
 
-- [Vibecoding 总索引](./posts/vibecoding/index.md)
+- [AI 应用开发总索引](./posts/vibecoding/index.md)
 - [AI 学习地图](./posts/vibecoding/AI/index.md)
 - [MCP](./posts/vibecoding/AI/基本概念/MCP.md)
 - [A2A 协议](./posts/vibecoding/AI/基本概念/A2A协议.md)

@@ -1,17 +1,17 @@
 ---
-title: 'Vibecoding'
+title: 'AI 应用开发'
 date: 2024-09-01
 updated: '2024-09-01 09:00:00'
 category: 'vibecoding'
 tags:
-  - 'Vibecoding'
+  - 'AI 应用开发'
   - 'AI'
   - 'AI 编程'
 lastUpdated: false
 summary: 'AI 学习、AI 编程、智能体、工具调用和研发工作流专题。'
 ---
 
-# Vibecoding
+# AI 应用开发
 
 这个专题用来整理 AI 学习和 AI 编程实践：从基础概念、协议、框架，到如何把 AI 接入真实研发流程。
 
@@ -31,4 +31,4 @@ summary: 'AI 学习、AI 编程、智能体、工具调用和研发工作流专�
 
 ## 专题边界
 
-传统后端内容继续放在 [后端修仙之路](../backend/road-to-backend/index.md)；这里专门放 AI、Agent、模型应用开发、工具调用和 vibecoding 工作流。
+传统后端内容继续放在 [后端修仙之路](../backend/road-to-backend/index.md)；这里专门放 AI、Agent、模型应用开发、工具调用和 AI 应用开发工作流。

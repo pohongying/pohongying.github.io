@@ -6,7 +6,7 @@ tags:
   - AI
   - 知识管理
   - 效率
-  - Vibecoding
+  - AI 应用开发
 summary: 记录 AI 在资料整理、方案生成和长期知识沉淀中的适用位置。
 ---
 

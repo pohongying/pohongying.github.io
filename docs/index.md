@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: 破虹影
-  text: 后端工程师 / Vibecoding 爱好者
+  text: 后端工程师 / AI 应用开发爱好者
   tagline: 4 段后端实习经历，长期打磨 Java、分布式、数据库与 AI 工具化。这里不是资料堆，是一座把经验、面试、项目和灵感重新编排过的个人技术星图。
   actions:
     - theme: brand
@@ -16,7 +16,7 @@ hero:
 features:
   - title: 后端主航道
     details: Java、JUC、JVM、Spring、MySQL、Redis、分布式与系统设计，一路从八股走到工程判断。
-  - title: Vibecoding 实验场
+  - title: AI 应用开发实验场
     details: 用 AI 参与需求拆解、知识整理、博客迁移和开发流，把灵感变成能跑起来的东西。
   - title: 面试与实战复盘
     details: 4 段后端实习经历沉淀出来的项目表达、面试问题、工程坑位和成长路线。
@@ -27,7 +27,7 @@ features:
     <p class="eyebrow">Profile</p>
     <h2>把后端经验整理成可复用的战术地图</h2>
     <p>
-      我是破虹影，目前主线是后端研发，也在持续探索 vibecoding：让 AI 进入真实开发现场，帮我更快地组织知识、生成方案、验证想法和沉淀作品。
+      我是破虹影，目前主线是后端研发，也在持续探索 AI 应用开发：让 AI 进入真实开发现场，帮我更快地组织知识、生成方案、验证想法和沉淀作品。
     </p>
   </div>
   <div class="signal-board" aria-label="个人技术概览">
@@ -61,8 +61,8 @@ features:
       <p>从 Java 基础、数据库、分布式到算法与秋招，把传统后端学习路线整理成一棵能展开的知识树。</p>
     </a>
     <a class="feature-card feature-card--hot" href="/posts/vibecoding/">
-      <span class="card-meta">Vibecoding</span>
-      <strong>Vibecoding 专题</strong>
+      <span class="card-meta">AI App Dev</span>
+      <strong>AI 应用开发专题</strong>
       <p>AI 基础、MCP、RAG、Agent、Spring AI 与 LangChain4j，单独整理成 AI 学习路线。</p>
     </a>
     <a class="feature-card" href="/posts/backend/road-to-backend/Java/JavaWeb/spring/原理">
@@ -106,7 +106,7 @@ features:
     <a href="/posts/backend/road-to-backend/数据库/Redis/">Redis</a>
     <a href="/posts/backend/road-to-backend/分布式/基础/分布式事务">分布式事务</a>
     <a href="/posts/backend/road-to-backend/算法/">算法</a>
-    <a href="/posts/vibecoding/">Vibecoding</a>
+    <a href="/posts/vibecoding/">AI 应用开发</a>
     <a href="/posts/vibecoding/AI/基本概念/MCP">MCP</a>
     <a href="/posts/vibecoding/AI/基本概念/RAG">RAG</a>
   </div>

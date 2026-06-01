@@ -4,11 +4,11 @@ date: 2022-10-03
 updated: '2022-10-03 17:13:22'
 category: 'vibecoding'
 tags:
-  - 'Vibecoding'
+  - 'AI 应用开发'
   - 'AI'
   - '基本概念'
 lastUpdated: false
-summary: 'Vibecoding 专题中的「RAG」笔记。'
+summary: 'AI 应用开发专题中的「RAG」笔记。'
 source: '语雀导出'
 source_url: 'https://www.yuque.com/pohongying/cnhh4c/vh4296qqvilo78nk'
 ---

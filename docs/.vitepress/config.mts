@@ -89,7 +89,7 @@ function buildMarkdownTree(root: string, base: string, dir = root, depth = 0, or
       return {
         text: entry.name,
         link: existsSync(indexPath) ? linkFromMarkdown(indexPath, root, base) : undefined,
-        collapsed: depth > 0,
+        collapsed: true,
         items: buildMarkdownTree(root, base, fullPath, depth + 1, order)
       }
     })
@@ -105,7 +105,7 @@ const backendRoadSidebar = [
 
 const vibecodingSidebar = [
   {
-    text: 'Vibecoding',
+    text: 'AI 应用开发',
     link: '/posts/vibecoding/',
     items: buildMarkdownTree(vibecodingRoot, '/posts/vibecoding/', vibecodingRoot, 0, vibecodingOrder)
   }
@@ -123,8 +123,7 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '后端修仙之路', link: '/posts/backend/road-to-backend/' },
-      { text: 'Vibecoding', link: '/posts/vibecoding/' },
-      { text: '文章', link: '/notes' },
+      { text: 'AI 应用开发', link: '/posts/vibecoding/' },
       { text: '项目', link: '/projects/' },
       { text: '写作', link: '/authoring' },
       { text: '关于', link: '/about' }
@@ -142,22 +141,22 @@ export default defineConfig({
           items: [
             { text: 'Backend 首页', link: '/posts/backend/' },
             { text: '后端修仙之路', link: '/posts/backend/road-to-backend/' },
-            { text: 'Vibecoding', link: '/posts/vibecoding/' }
+            { text: 'AI 应用开发', link: '/posts/vibecoding/' }
           ]
         }
       ],
       '/posts/': [
         {
-          text: '文章主题',
+          text: '内容主题',
           items: [
             { text: 'Engineering', link: '/posts/engineering/' },
-            { text: 'Vibecoding', link: '/posts/vibecoding/' },
+            { text: 'AI 应用开发', link: '/posts/vibecoding/' },
             { text: 'Frontend', link: '/posts/frontend/' },
             { text: 'Backend', link: '/posts/backend/' }
           ]
         },
         {
-          text: '精选文章',
+          text: '精选内容',
           items: [
             {
               text: '长期可维护的技术博客',

@@ -15,7 +15,7 @@
 - 工具：Arthas、Maven
 - 秋招整理：面经、笔试、软实力、投递记录
 
-AI 学习、AI 编程和智能体内容已经拆到独立专题：[Vibecoding](../vibecoding/index.md)。
+AI 学习、AI 编程和智能体内容已经拆到独立专题：[AI 应用开发](../vibecoding/index.md)。
 
 ## 推荐入口
 
